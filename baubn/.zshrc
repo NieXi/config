@@ -91,6 +91,9 @@ alias ccc="cd C:"
 alias ccd="cd d:"
 alias ccf="cd f:"
 alias ccg="cd g:"
+alias bwg="ssh root@23.106.155.23 -p 29038"
+alias idea="cd /cygdrive/c/Users/xi/IdeaProjects"
+
 export TERM=xterm-256color
 uo(){
 iconv -f gbk -t utf-8 $1 | less
