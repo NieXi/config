@@ -1,0 +1,147 @@
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+
+" ============================================================
+" 	FileName: _vimrc for Win10
+" 	Date: 11.20.2016
+" 	Email: xilemon3@gmail.com
+" ============================================================
+
+"处理乱码:{{{
+language messages zh_CN.utf-8"		"解决consle输出乱码
+let $LANG="zh_CN.UTF-8"
+set langmenu=zh_cn.utf-8		"设置菜单栏编码
+set encoding=utf8
+"reload menu with UTF-8 encoding
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+"}}}
+
+
+"插件配置:{{{
+filetype off
+set rtp+=$VIM/vimfiles/bundle/Vundle.vim 	"Vundle的路径
+call vundle#begin('$VIM/vimfiles/bundle/')	"插件的安装路径
+" =========================================
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'  "八卦配色
+Plugin 'bling/vim-bufferline'
+Plugin 'bling/vim-airline'		"powerline插件
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+"Plugin 'MiniBufExplorer'
+"Plugin 'MikeCoder/markdown-preview.vim'  "需要python
+"Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'majutsushi/tagbar'
+"Plugin 'fholgado/minibufexpl.vim'
+Plugin 'kevinw/pyflakes' "python语法检查
+Plugin 'fs111/pydoc.vim' "python文档
+Plugin 'davidhalter/jedi-vim' "python代码提示
+Plugin 'vim-scripts/indentpython.vim' "自动缩进
+Plugin 'mattn/calendar-vim' "提供日历的功能，并且可以记笔记
+Plugin 'elzr/vim-json' 	"json高亮显示
+Plugin 'vim-scripts/matrix.vim--Yang'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'Yggdroot/indentLine'  "缩进指示线
+Plugin 'tell-k/vim-autopep8'	"Normal模式输入:Autopep8或按F8就可以自动依照pep8的标准自动格式化代码。
+Plugin 'jiangmiao/auto-pairs'	"括号和引号自动补全
+Plugin 'scrooloose/nerdcommenter' "v并移动光标选择需要注释的行+<F4>
+"Plugin 'klen/python-mode'
+" =========================================
+call vundle#end()
+filetype plugin indent on
+"}}}
+"插件相关配置:{{{
+"autocmd vimenter * NERDTree
+"F2开启和关闭树"
+map <F2> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=1
+"显示书签"
+let NERDTreeShowBookmarks=1
+"设置忽略文件类型"
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+"窗口大小"
+let NERDTreeWinSize=25
+"nerdtree end
+
+"缩进指示线"
+let g:indentLine_char='┆'
+let g:indentLine_enabled = 1
+
+"autopep8设置"
+let g:autopep8_disable_show_diff=1
+
+"nerdcommenter
+let mapleader=','
+map <F4> <leader>ci <CR>
+
+"let g:Powerline_colorscheme='solarized256' 	"设置状态栏配色powerline第二个插件
+set guifont=DejaVuSansMonoForPowerLine_NF:h11:b:cANSI:qDRAFT
+let g:airline_theme="solarized"
+let g:airline_powerline_fonts = 1		"这个是安装字体后 必须设置此项" 
+"}}}
+
+" 配色方案:{{{
+set background=dark
+colorscheme solarized
+"colorscheme molokai
+"colorscheme ph
+"}}}
+
+" 其他配置:{{{
+set laststatus=2 				"显示状态栏
+set mouse=a					"启用鼠标
+set nu  					" 设置行号
+set guioptions=ce 				"取消菜单栏
+"set guifont=YaHei_Consolas_Hybrid:h11.5:b	" 设置 gvim 显示字体
+set lines=25 columns=80 			"设置gvim窗口大小
+set wildmenu					" vim 自身命令行模式智能补全 
+set cursorline					" 高亮显示当前行/列
+"autocmd GUIEnter * simalt ~x			"设定windows下 gvim 启动时最大化
+set helplang=cn					"设置帮助的语言为中文
+set vb t_vb= 					" 关闭提示音
+"set list 					" 显示Tab符，使用一高亮竖线代替
+set nobackup
+"}}}
+
+"python配置{{{
+let python_highlight_all=1
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"}}}

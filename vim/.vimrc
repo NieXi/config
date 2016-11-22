@@ -1,9 +1,10 @@
 "========================================================================
 "
 "                   FileName: VIM配置文件
-"                   Date: 11.17.2016
 "                   Author: magexi
+"                   Version: 1.0.0
 "                   Email: xilemon3@gmail.com
+"                   Date: 11.17.2016
 "
 "=======================================================================
 
@@ -15,6 +16,35 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " 关闭兼容模式
 set nocompatible
 
+"设置取消备份 禁止临时文件生成
+set nobackup
+set noswapfile
+
+"指定配色方案为256色
+set t_Co=256
+
+"设置搜索时忽略大小写
+set ignorecase
+
+"设置在Vim中可以使用鼠标 防止在Linux终端下无法拷贝
+set mouse=a
+
+"启动智能补全
+filetype plugin indent on
+
+"在状态栏显示正在输入的命令
+set showcmd
+
+
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
 "插件设置
 " vundle 环境设置
 set nocompatible              " be iMproved, required
@@ -24,11 +54,35 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/phd'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'suan/vim-instant-markdown'
+"Plugin 'Lokaltog/vim-powerline'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
+
+"使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+nmap <Leader>fl0 :NERDTreeToggle<CR>
+" 设置 NERDTree 子窗口宽度
+let NERDTreeWinSize=22
+" 设置 NERDTree 子窗口位置
+let NERDTreeWinPos="right"
+" 显示隐藏文件
+let NERDTreeShowHidden=1
+" NERDTree 子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=1
+" 删除文件时自动删除文件对应 buffer
+ let NERDTreeAutoDeleteBuffer=1
+
+  
+" 显示/隐藏 MiniBufExplorer 窗口
+map <Leader>bl :MBEToggle<cr>
 
 " 配色方案
 set background=dark
@@ -43,7 +97,8 @@ set guioptions-=T
 "显示行号
 set nu
 
-" 总是显示状态栏
+" 总是显示状态栏(安装完poweline之后,这一设置是powerline显示)
+"vim有一个状态栏 加上powline则有两个状态栏
 set laststatus=2
 
 " 显示光标当前位置
@@ -57,7 +112,8 @@ set cursorcolumn
 set guifont=YaHei\ Consolas\ Hybrid\ 10.5
 
 " 设置状态栏主题风格
-let g:Powerline_colorscheme='solarized256'
+"let g:Powerline_colorscheme='solarized256'
+"let g:airline_theme='solarized256'
 
 " 开启语法高亮功能
 syntax enable
