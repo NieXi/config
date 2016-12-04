@@ -57,17 +57,10 @@ call vundle#begin('$VIM/vimfiles/bundle/')	"插件的安装路径
 " =========================================
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'  "八卦配色
-Plugin 'bling/vim-bufferline'
 Plugin 'bling/vim-airline'		"powerline插件
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'Lokaltog/vim-powerline'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-"Plugin 'MiniBufExplorer'
-"Plugin 'MikeCoder/markdown-preview.vim'  "需要python
-"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 "Plugin 'fholgado/minibufexpl.vim'
 Plugin 'kevinw/pyflakes' "python语法检查
@@ -83,7 +76,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tell-k/vim-autopep8'	"Normal模式输入:Autopep8或按F8就可以自动依照pep8的标准自动格式化代码。
 Plugin 'jiangmiao/auto-pairs'	"括号和引号自动补全
 Plugin 'scrooloose/nerdcommenter' "v并移动光标选择需要注释的行+<F4>
-"Plugin 'klen/python-mode'
+Plugin 'vim-bufferline'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'kien/rainbownparentheses.vim'
 " =========================================
 call vundle#end()
 filetype plugin indent on
@@ -112,10 +107,12 @@ let g:autopep8_disable_show_diff=1
 let mapleader=','
 map <F4> <leader>ci <CR>
 
-"let g:Powerline_colorscheme='solarized256' 	"设置状态栏配色powerline第二个插件
 set guifont=DejaVuSansMonoForPowerLine_NF:h11:b:cANSI:qDRAFT
-let g:airline_theme="solarized"
-let g:airline_powerline_fonts = 1		"这个是安装字体后 必须设置此项" 
+"let g:airline_theme="solarized"
+"let g:airline_theme="powerlineish"
+"let g:airline_theme="base16"
+let g:airline_theme="papercolor"  "不变色
+let g:airline_powerline_fonts = 1
 "}}}
 
 " 配色方案:{{{
@@ -144,4 +141,27 @@ set nobackup
 "python配置{{{
 let python_highlight_all=1
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"}}}
+
+"buffers设置{{{
+set hidden " 避免必须保存修改才可以跳转buffer
+
+" buffer快速导航
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+
+" 查看buffers
+nnoremap <Leader>l :ls<CR>
+
+" 通过索引快速跳转
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
 "}}}
