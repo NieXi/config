@@ -36,15 +36,6 @@ filetype plugin indent on
 set showcmd
 
 
-" 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
-" 从第二层开始可视化显示缩进
-let g:indent_guides_start_level=2
-" 色块宽度
-let g:indent_guides_guide_size=1
-" 快捷键 i 开/关缩进可视化
-:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
-
 "插件设置
 " vundle 环境设置
 set nocompatible              " be iMproved, required
@@ -97,8 +88,7 @@ set guioptions-=T
 "显示行号
 set nu
 
-" 总是显示状态栏(安装完poweline之后,这一设置是powerline显示)
-"vim有一个状态栏 加上powline则有两个状态栏
+" 总是显示状态栏
 set laststatus=2
 
 " 显示光标当前位置

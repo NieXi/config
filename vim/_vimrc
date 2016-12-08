@@ -1,167 +1,82 @@
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
-
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      if empty(&shellxquote)
-        let l:shxq_sav = ''
-        set shellxquote&
-      endif
-      let cmd = '"' . $VIMRUNTIME . '\diff"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-  if exists('l:shxq_sav')
-    let &shellxquote=l:shxq_sav
-  endif
-endfunction
-
-
 " ============================================================
-" 	FileName: _vimrc for Win10
-" 	Date: 11.20.2016
-" 	Email: xilemon3@gmail.com
+" 	FileName:   _vimrc for Win10
+" 	Date:       12.07.2016
+" 	Email:      xilemon3@gmail.com
+" 	Notes:      simple,simple,simple
 " ============================================================
 
-"´¦ÀíÂÒÂë:{{{
-language messages zh_CN.utf-8"		"½â¾öconsleÊä³öÂÒÂë
+
+set encoding=utf8									" è®¾ç½®ç¼–ç 
+set helplang=cn										" è®¾ç½®å¸®åŠ©çš„è¯­è¨€ä¸ºä¸­æ–‡
+language messages zh_CN.utf-8						" è§£å†³consleè¾“å‡ºä¹±ç 
 let $LANG="zh_CN.UTF-8"
-set langmenu=zh_cn.utf-8		"ÉèÖÃ²Ëµ¥À¸±àÂë
-set encoding=utf8
-"reload menu with UTF-8 encoding
+set langmenu=zh_cn.utf-8							" è®¾ç½®èœå•æ ç¼–ç 
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-"}}}
 
 
-"²å¼şÅäÖÃ:{{{
 filetype off
-set rtp+=$VIM/vimfiles/bundle/Vundle.vim 	"VundleµÄÂ·¾¶
-call vundle#begin('$VIM/vimfiles/bundle/')	"²å¼şµÄ°²×°Â·¾¶
-" =========================================
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'  "°ËØÔÅäÉ«
-Plugin 'bling/vim-airline'		"powerline²å¼ş
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'majutsushi/tagbar'
-"Plugin 'fholgado/minibufexpl.vim'
-Plugin 'kevinw/pyflakes' "pythonÓï·¨¼ì²é
-Plugin 'fs111/pydoc.vim' "pythonÎÄµµ
-Plugin 'davidhalter/jedi-vim' "python´úÂëÌáÊ¾
-Plugin 'vim-scripts/indentpython.vim' "×Ô¶¯Ëõ½ø
-Plugin 'mattn/calendar-vim' "Ìá¹©ÈÕÀúµÄ¹¦ÄÜ£¬²¢ÇÒ¿ÉÒÔ¼Ç±Ê¼Ç
-Plugin 'elzr/vim-json' 	"json¸ßÁÁÏÔÊ¾
-Plugin 'vim-scripts/matrix.vim--Yang'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'Yggdroot/indentLine'  "Ëõ½øÖ¸Ê¾Ïß
-Plugin 'tell-k/vim-autopep8'	"NormalÄ£Ê½ÊäÈë:Autopep8»ò°´F8¾Í¿ÉÒÔ×Ô¶¯ÒÀÕÕpep8µÄ±ê×¼×Ô¶¯¸ñÊ½»¯´úÂë¡£
-Plugin 'jiangmiao/auto-pairs'	"À¨ºÅºÍÒıºÅ×Ô¶¯²¹È«
-Plugin 'scrooloose/nerdcommenter' "v²¢ÒÆ¶¯¹â±êÑ¡ÔñĞèÒª×¢ÊÍµÄĞĞ+<F4>
+set rtp+=$VIM/vimfiles/bundle/Vundle.vim 			" Vundleçš„è·¯å¾„
+call vundle#begin('$VIM/vimfiles/bundle/')			" æ’ä»¶åˆ—è¡¨å¼€å§‹
+
+Plugin 'VundleVim/Vundle.vim'             
+
+Plugin 'altercation/vim-colors-solarized'  			" å…«å¦é…è‰²
+Plugin 'bling/vim-airline'							" powerlineæ’ä»¶
+Plugin 'vim-airline/vim-airline-themes'				" airlineä¸»é¢˜
+Plugin 'plasticboy/vim-markdown'					" markdown
+Plugin 'jiangmiao/auto-pairs'						" æ‹¬å·å’Œå¼•å·è‡ªåŠ¨è¡¥å…¨
 Plugin 'vim-bufferline'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'kien/rainbownparentheses.vim'
-" =========================================
-call vundle#end()
-filetype plugin indent on
-"}}}
-"²å¼şÏà¹ØÅäÖÃ:{{{
-"autocmd vimenter * NERDTree
-"F2¿ªÆôºÍ¹Ø±ÕÊ÷"
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeChDirMode=1
-"ÏÔÊ¾ÊéÇ©"
-let NERDTreeShowBookmarks=1
-"ÉèÖÃºöÂÔÎÄ¼şÀàĞÍ"
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
-"´°¿Ú´óĞ¡"
-let NERDTreeWinSize=25
-"nerdtree end
+Plugin 'tpope/vim-fugitive'
+Plugin 'othree/xml.vim'                             " xmlå’Œhtml
 
-"Ëõ½øÖ¸Ê¾Ïß"
-let g:indentLine_char='©ª'
-let g:indentLine_enabled = 1
+call vundle#end()									" æ’ä»¶åˆ—è¡¨ç»“æŸ
+filetype plugin indent on							" è½½å…¥æ–‡ä»¶ç±»å‹æ’ä»¶,å’Œç¼©è¿›
 
-"autopep8ÉèÖÃ"
-let g:autopep8_disable_show_diff=1
-
-"nerdcommenter
-let mapleader=','
-map <F4> <leader>ci <CR>
 
 set guifont=DejaVuSansMonoForPowerLine_NF:h11:b:cANSI:qDRAFT
-"let g:airline_theme="solarized"
+"set guifont=YaHei_Consolas_Hybrid:h11.5:b			" è®¾ç½® gvim æ˜¾ç¤ºå­—ä½“
+
+"let g:airline_theme="solarized"					" è®¾ç½®ä¸»é¢˜æ é£æ ¼
 "let g:airline_theme="powerlineish"
 "let g:airline_theme="base16"
-let g:airline_theme="papercolor"  "²»±äÉ«
+let g:airline_theme="papercolor"			  		" ç›®å‰ä½¿ç”¨çš„ä¸»é¢˜
 let g:airline_powerline_fonts = 1
-"}}}
 
-" ÅäÉ«·½°¸:{{{
 set background=dark
 colorscheme solarized
 "colorscheme molokai
 "colorscheme ph
-"}}}
 
-" ÆäËûÅäÖÃ:{{{
-set laststatus=2 				"ÏÔÊ¾×´Ì¬À¸
-set mouse=a					"ÆôÓÃÊó±ê
-set nu  					" ÉèÖÃĞĞºÅ
-set guioptions=ce 				"È¡Ïû²Ëµ¥À¸
-"set guifont=YaHei_Consolas_Hybrid:h11.5:b	" ÉèÖÃ gvim ÏÔÊ¾×ÖÌå
-set lines=25 columns=80 			"ÉèÖÃgvim´°¿Ú´óĞ¡
-set wildmenu					" vim ×ÔÉíÃüÁîĞĞÄ£Ê½ÖÇÄÜ²¹È« 
-set cursorline					" ¸ßÁÁÏÔÊ¾µ±Ç°ĞĞ/ÁĞ
-"autocmd GUIEnter * simalt ~x			"Éè¶¨windowsÏÂ gvim Æô¶¯Ê±×î´ó»¯
-set helplang=cn					"ÉèÖÃ°ïÖúµÄÓïÑÔÎªÖĞÎÄ
-set vb t_vb= 					" ¹Ø±ÕÌáÊ¾Òô
-"set list 					" ÏÔÊ¾Tab·û£¬Ê¹ÓÃÒ»¸ßÁÁÊúÏß´úÌæ
-set nobackup
-"}}}
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}  " çŠ¶æ€è¡Œæ˜¾ç¤ºçš„å†…å®¹ï¼ˆåŒ…æ‹¬æ–‡ä»¶ç±»å‹å’Œè§£ç ï¼‰
+"set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]  
 
-"pythonÅäÖÃ{{{
-let python_highlight_all=1
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-"}}}
-
-"buffersÉèÖÃ{{{
-set hidden " ±ÜÃâ±ØĞë±£´æĞŞ¸Ä²Å¿ÉÒÔÌø×ªbuffer
-
-" buffer¿ìËÙµ¼º½
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-
-" ²é¿´buffers
-nnoremap <Leader>l :ls<CR>
-
-" Í¨¹ıË÷Òı¿ìËÙÌø×ª
-nnoremap <Leader>1 :1b<CR>
-nnoremap <Leader>2 :2b<CR>
-nnoremap <Leader>3 :3b<CR>
-nnoremap <Leader>4 :4b<CR>
-nnoremap <Leader>5 :5b<CR>
-nnoremap <Leader>6 :6b<CR>
-nnoremap <Leader>7 :7b<CR>
-nnoremap <Leader>8 :8b<CR>
-nnoremap <Leader>9 :9b<CR>
-nnoremap <Leader>0 :10b<CR>
-"}}}
+set laststatus=2 					" å§‹ç»ˆæ˜¾ç¤ºçŠ¶æ€æ 
+set mouse=a							" å¯ç”¨é¼ æ ‡
+filetype on							" ä¾¦æµ‹æ–‡ä»¶ç±»å‹
+syntax enable						" å¼€å¯è¯­æ³•é«˜äº®
+syntax on							" å…è®¸ç”¨æŒ‡å®šè¯­æ³•é«˜äº®é…è‰²æ›¿æ¢é»˜è®¤æ–¹æ¡ˆ
+set nu  							" è®¾ç½®è¡Œå·
+set guioptions=ce 					" å–æ¶ˆèœå•æ 
+set lines=40 columns=100 			" è®¾ç½®gvimçª—å£å¤§å°
+set wildmenu						" vim è‡ªèº«å‘½ä»¤è¡Œæ¨¡å¼æ™ºèƒ½è¡¥å…¨ 
+set cursorline						" é«˜äº®æ˜¾ç¤ºå½“å‰è¡Œ/åˆ—
+set cursorcolumn
+set ruler							" å³ä¸‹è§’æ˜¾ç¤ºå…‰æ ‡ä½ç½®çš„çŠ¶æ€è¡Œ
+set autoindent						" è‡ªåŠ¨ç¼©è¿›
+set cindent 						" è‡ªåŠ¨ç¼©è¿›
+set vb t_vb= 						" å…³é—­æç¤ºéŸ³
+set nobackup						" å–æ¶ˆå¤‡ä»½
+set noswapfile  					" ç¦æ­¢ç”Ÿæˆä¸´æ—¶æ–‡ä»¶
+set ignorecase                      " æœç´¢å¿½ç•¥å¤§å°å†™ 
+set expandtab						" å°†åˆ¶è¡¨ç¬¦æ‰©å±•ä¸ºç©ºæ ¼
+set tabstop=4						" è®¾ç½®ç¼–è¾‘æ—¶åˆ¶è¡¨ç¬¦å ç”¨ç©ºæ ¼æ•°
+set softtabstop=4					" è®¾ç½®æ ¼å¼åŒ–æ—¶åˆ¶è¡¨ç¬¦å ç”¨ç©ºæ ¼æ•°
+set shiftwidth=4					" è®©vimæŠŠè¿ç»­çš„ç©ºæ ¼è§†ä¸ºä¸€ä¸ªåˆ¶è¡¨ç¬¦
+set hidden 							" é¿å…å¿…é¡»ä¿å­˜ä¿®æ”¹æ‰å¯ä»¥è·³è½¬buffer
+set showcmd							" åœ¨çŠ¶æ€æ æ˜¾ç¤ºæ­£åœ¨è¾“å…¥çš„å‘½ä»¤
+set nocompatible                    " è®¾ç½®ä¸å…¼å®¹viæ¨¡å¼
+set hls                             " é«˜äº®æ˜¾ç¤ºæœç´¢ç»“æœ
+set is                              " è¾“å…¥å³å¯æœç´¢
+"set spell                           " æ‹¼å†™æ£€æŸ¥
+"autocmd GUIEnter * simalt ~x		" è®¾å®šwindowsä¸‹ gvim å¯åŠ¨æ—¶æœ€å¤§åŒ–
