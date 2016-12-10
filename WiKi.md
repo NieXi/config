@@ -5,12 +5,10 @@
 1. 'HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/CTF/TIP/'下搜索"小狼毫"
 2. 在上一层的Category目录下找到所有的{13A016DF-560B-46CD-947A-4C3AF1E0E35D}(一共两个),删除这两个注册表
 
-
 ## vim-airline显示问题：
 1. 需要特殊字体,可从airline官网下载
 2. (win)设置vim字体：0):`set guifont=*`选中想要的字体.1)然后在`:set guifont`得到已经临时设置的字体的名称.2)在_vimr中添加得到的字体名称
 3. gvim for win 中字体间的空格可以用`_`代替，linux 中可用`\ `代替
-
 
 ## win10 mysql的zip压缩包安装方式：
 username:root
@@ -41,10 +39,12 @@ password:magexi
 8. 刷新数据库`flush privileges; `
 9. 添加mysql的bin目录到Path环境变量.
 
-
 ## Java环境变量配置
 **在用户环境变量配置**
-- JAVA_HOME:  `C:\Java\jdk`(jdk安装目录)
+- 安装目录结构:
+        D:\Java\---jdk  
+                ---jre
+- JAVA_HOME:  `D:\Java\jdk`(jdk安装目录)
 - CLASS_PATH:  `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`
 - PATH:  `;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`
 
@@ -56,10 +56,13 @@ password:magexi
 4. 重命名:`New Value #1`-->`Scancode Map`
 5. `Scancode Map`-->`Modify`
 6. 输入:
-		
 		0000  00 00 00 00 00 00 00 00
 		0008  03 00 00 00 1D 00 3A 00
 		0010  3A 00 1D 00 00 00 00 00  
 		0018
 
-7. 重启即可
+
+## PortableGit 设置.ssh
+1. 打开git-bash.exe,命令`ssh-keygen -t rsa -C “username@example.com”`
+2. 一路next
+3. 在user目录下的.ssh文件夹中打开`id_rsa.pub`,把其中的内容填到github的ssh中
