@@ -5,7 +5,10 @@
 
 ## vim-airline显示问题：
 1. 需要特殊字体,可从airline官网下载.
-2. (win)设置vim字体：  0):`set guifont=*`选中想要的字体.  1)然后再`:set guifont`得到已经临时设置的字体的名称.  2)在_vimr中添加得到的字体名称.
+2. (win)设置vim字体:
+	- `set guifont=*`选中想要的字体.
+	- 然后再`:set guifont`得到已经临时设置的字体的名称.
+	- 在_vimr中添加得到的字体名称.
 3. gvim for win 中字体间的空格可以用`_`代替，linux 中可用`\ `代替.
 
 ## win10 mysql的zip压缩包安装方式：
@@ -22,7 +25,7 @@
 		; 设置mysql客户端默认字符集
 		default-character-set=utf8
 		[mysqld]
-		;设置3306端口
+		; 设置3306端口
 		port = 3306 
 		; 设置mysql的安装目录
 		basedir=E:\mysql5.7
@@ -59,11 +62,11 @@
 4. 重命名:`New Value #1`-->`Scancode Map`.
 5. `Scancode Map`-->`Modify`.
 6. 输入:
-
-        0000  00 00 00 00 00 00 00 00
-	0008  03 00 00 00 1D 00 3A 00
-	0010  3A 00 1D 00 00 00 00 00
-	0018
+		
+		0000  00 00 00 00 00 00 00 00
+		0008  03 00 00 00 1D 00 3A 00
+		0010  3A 00 1D 00 00 00 00 00
+		0018
 
 ## PortableGit设置.ssh:
 1. 打开`git-bash.exe`-->`ssh-keygen -t rsa -C “username@example.com”`,然后一路next.
