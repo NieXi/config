@@ -15,33 +15,36 @@
 1. 账户密码:
         
         username:root  
-        password:magexi
+        password:root
 
 2. 解压zip压缩包到指定文件夹.
-3. 新建my.ini配置文件：
+3. 新建一个my.ini配置文件：
         
-		新建一个my.ini文件，然后用记事本打开输入mysql的基本配置：
-		[mysql]
-		; 设置mysql客户端默认字符集
-		default-character-set=utf8
-		[mysqld]
-		; 设置3306端口
-		port = 3306 
-		; 设置mysql的安装目录
-		basedir=E:\mysql5.7
-		; 设置mysql数据库的数据的存放目录
-		datadir=E:\mysql5.7\data
-		; 允许最大连接数
-		max_connections=200
-		; 服务端使用的字符集默认为8比特编码的latin1字符集
+        [mysql]
+        ; 设置mysql客户端默认字符集
+        default-character-set=utf8
+        [mysqld]
+        ;设置3306端口
+        port = 3306 
+        ; 设置mysql的安装目录
+        basedir=E:\mysql5.7
+        ; 设置mysql数据库的数据的存放目录
+        datadir=E:\mysql5.7\data
+        ; 允许最大连接数
+        max_connections=200
+        ; 服务端使用的字符集默认为8比特编码的latin1字符集
+        character-set-server=utf8
+        ; 创建新表时将使用的默认存储引擎
+        default-storage-engine=INNODB 
 
 3. 以管理员身份打开cmd窗口后，将目录切换到你的解压文件bin目录下。再输入`mysqld install`回车运行就可以了，注意是`mysqld`不是`mysql`.
-4. 接下来执行`mysqld  --initialize` 初始化data目录.
+4. 接下来执行`mysqld  --initialize` 初始化data目录.(mysql会自动新建date文件夹)
 5. 在提示命令管理工具输入如下命令,进入安全模式：`mysqld --defaults-file="E:\mysql5.7\my.ini" --console --skip-grant-tables`,路径根据安装的实际路径修改,保持该窗口运行.
-6. 然后以管理员权限打开新的命令提示窗口,cd到mysql的bin目录进行登陆.
-7. 修改密码,`use mysql;`,`update user set authentication_string=password("新密码") where user="root"`
+6. 然后以管理员权限打开新的命令提示窗口,cd到mysql的bin目录.
+7. 修改密码,`use mysql;`,`update user set authentication_string=password("此处输入密码") where user="root"`
 8. 刷新数据库`flush privileges;`
 9. 添加mysql的bin目录到Path环境变量.
+10. [百度经验][1]
 
 ## Java环境变量配置:
 - 安装目录结构:
@@ -51,9 +54,9 @@
 
 - 用户环境变量配置:
         
-        JAVA_HOME:  `D:\Java\jdk`(jdk安装目录)
-        CLASS_PATH:  `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`
-        PATH:  `;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`
+        JAVA_HOME:      `D:\Java\jdk`(jdk安装目录)
+        CLASS_PATH:     `.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;`
+        PATH:           `;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;`
 
 ## CapsLock键与L-Ctrl互换:
 1. `win+R`+`regedit`打开注册表.
@@ -71,3 +74,12 @@
 ## PortableGit设置.ssh:
 1. 打开`git-bash.exe`-->`ssh-keygen -t rsa -C “username@example.com”`,然后一路next.
 2. 在user目录下的.ssh文件夹中打开`id_rsa.pub`,把其中的内容填到github的ssh中.
+
+## ConEmu 
+1. Startup-->Command line: `%windir%\system32\bash.exe ~ -cur_console:p1`(直接启动bash,主目录)
+
+## 实用的PY:
+1. python -m SimpleHTTPServer [port]
+2. python -m http.server [port]
+
+[1]:http://jingyan.baidu.com/article/af9f5a2d16fa4d43150a4552.html
