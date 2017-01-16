@@ -2,7 +2,7 @@
 "           FileName:   _vimrc for Win10                /
 "           Date:       12.07.2016                      /
 "           Email:      xilemon3@gmail.com              /
-"           Notes:      simple,simple,simple            /
+"           Notes:      尽量简单一点
 " =======================================================
 
 " Startup {{{
@@ -17,10 +17,11 @@ augroup end
 set nocompatible                    " 设置不兼容vi模式
 set clipboard+=unnamed              " vim默认寄存器与系统剪切版共享
 set mousehide                       " 输入时隐藏鼠标
+set backspace=2                     " insert模式下启用backspace
 set nobackup
 set noswapfile
 set history=1024
-set autoread                        " 自动更新文件
+set autoread
 " }}}
 
 " Lang & Encoding {{{
@@ -47,48 +48,28 @@ Plugin 'VundleVim/Vundle.vim'
 " 来自github的插件
 " ----- Theme ----- {{{
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'vim-scripts/phd'    " vim-scripts插件
 "  }}}
 
 " ----- airline ----- {{{
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2 					                " 始终显示状态栏
-let g:airline_theme="papercolor"
+"let g:airline_theme="papercolor"
 "let g:airline_theme="solarized"
 "let g:airline_theme="powerlineish"
-"let g:airline_theme="base16"
+let g:airline_theme="base16"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "  }}}
 
-" ----- Emmet ----- {{{
-Plugin 'mattn/emmet-vim'
-"  }}}
 
 " ----- MarkDown ----- {{{
-"Plugin 'plasticboy/vim-markdown'
 Plugin 'tangledhelix/vim-octopress'
 "  }}}
 
-" ----- AutoPairs ----- {{{
-Plugin 'jiangmiao/auto-pairs'						" 括号和引号自动补全
-"  }}}
 
-" ----- XML & HTML ----- {{{
-Plugin 'othree/xml.vim'
-"  }}}
-
-" ----- NerdTree ----- {{{
-Plugin 'scrooloose/nerdtree'
-map <F2> :NERDTreeToggle<CR>
-" autocmd vimenter * NERDTree                       " 启动时自动打开nerdtree
-"  }}}
-
-Plugin 'bronson/vim-trailing-whitespace'            " 清除尾部空格
 Plugin 'magexi/vimcdoc'                             " vim中文文档
-Plugin 'vimwiki/vimwiki'
+"Plugin 'vimwiki/vimwiki'
 
 " 来自vim-scripts直接写名字
 " eg: Plugin 'L9'
@@ -106,13 +87,11 @@ call vundle#end()
 " GUI {{{
 set background=dark
 colorscheme solarized
-"colorscheme molokai
-"colorscheme phd
 set cursorline						" 高亮显示当前行/列
 set cursorcolumn
 set number
 "set relativenumber                  " 设置相对行号
-set lines=40 columns=100 			" 设置gvim窗口大小
+set lines=40 columns=100
 set guioptions-=T                   " 不显示工具栏/菜单栏
 set guioptions-=m
 set guioptions-=L
@@ -148,6 +127,5 @@ set foldlevel=0                     " 设置折叠层次 0表示全部折叠
 set mouse=a
 set showmode
 set showcmd
-"set spell
 "autocmd GUIEnter * simalt ~x		" 设定windows下 gvim 启动时最大化
 " }}}
