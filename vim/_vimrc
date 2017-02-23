@@ -2,7 +2,7 @@
 "           FileName:   _vimrc for Win10                /
 "           Date:       12.07.2016                      /
 "           Email:      xilemon3@gmail.com              /
-"           Notes:      尽量简单一点
+"           Notes:      尽量简单一点                    /
 " =======================================================
 
 " Startup {{{
@@ -54,22 +54,26 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2 					                " 始终显示状态栏
-"let g:airline_theme="papercolor"
+let g:airline_theme="papercolor"
 "let g:airline_theme="solarized"
 "let g:airline_theme="powerlineish"
-let g:airline_theme="base16"
+"let g:airline_theme="base16"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "  }}}
-
 
 " ----- MarkDown ----- {{{
 Plugin 'tangledhelix/vim-octopress'
 "  }}}
 
-
+" ----- NERDTree----- {{{
+Plugin 'scrooloose/nerdtree'
+map <F2> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+"  }}}
 Plugin 'magexi/vimcdoc'                             " vim中文文档
-"Plugin 'vimwiki/vimwiki'
+Plugin 'vimwiki/vimwiki'
 
 " 来自vim-scripts直接写名字
 " eg: Plugin 'L9'
