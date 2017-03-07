@@ -1,9 +1,8 @@
-" =======================================================
-"           FileName:   _vimrc for Win10                /
-"           Date:       12.07.2016                      /
-"           Email:      xilemon3@gmail.com              /
-"           Notes:      尽量简单一点                    /
-" =======================================================
+" ===================================================
+"           Name:   _vimrc for Win10                =    
+"           Author:     NieXi                       =    
+"           Email:      xilemon3@gmail.com          =    
+" ===================================================
 
 " Startup {{{
 filetype plugin indent on							" 载入文件类型插件,和缩进
@@ -50,16 +49,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 "  }}}
 
-" ----- airline ----- {{{
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" ----- vim-powerline ----- {{{
+Plugin 'Lokaltog/vim-powerline'
 set laststatus=2 					                " 始终显示状态栏
-let g:airline_theme="papercolor"
+"Plugin 'bling/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"let g:airline_theme="papercolor"
 "let g:airline_theme="solarized"
 "let g:airline_theme="powerlineish"
 "let g:airline_theme="base16"
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
 "  }}}
 
 " ----- MarkDown ----- {{{
@@ -69,20 +69,18 @@ Plugin 'tangledhelix/vim-octopress'
 " ----- NERDTree----- {{{
 Plugin 'scrooloose/nerdtree'
 map <F2> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
 "  }}}
+
+" ----- Ctrl-p ----- {{{
+Plugin 'kien/ctrlp.vim'
+"  }}}
+
+" ----- minibufexpl ----- {{{
+Plugin 'fholgado/minibufexpl.vim'
+let g:miniBufExplMapCTabSwitchBufs = 1
+" }}}
+
 Plugin 'magexi/vimcdoc'                             " vim中文文档
-Plugin 'vimwiki/vimwiki'
-
-" 来自vim-scripts直接写名字
-" eg: Plugin 'L9'
-
-" 来自自己的git库
-" eg: Plugin 'git://git.wincent.com/command-t.git'
-
-" 本地文件
-" eg: Plugin 'file:///home/gmarik/path/to/plugin'
 
 filetype on
 call vundle#end()
@@ -91,26 +89,28 @@ call vundle#end()
 " GUI {{{
 set background=dark
 colorscheme solarized
-set cursorline						" 高亮显示当前行/列
+set cursorline						 " 高亮显示当前行/列
 set cursorcolumn
-set number
+set nu
 "set relativenumber                  " 设置相对行号
-set lines=40 columns=100
-set guioptions-=T                   " 不显示工具栏/菜单栏
+"autocmd GUIEnter * simalt ~x		 " 设定windows下 gvim 启动时最大化
+winpos 500 100                       " 设定启动位置
+set lines=30 columns=90
+set guioptions-=T                    " 不显示工具栏/菜单栏
 set guioptions-=m
 set guioptions-=L
 set guioptions-=r
 set guioptions-=b
-set guioptions-=e 					" 使用内置tab样式,而不是gui
-set guifont=DejaVu_Sans_Mono_for_Powerline:h11:b:cANSI:qDRAFT
-"set guifont=YaHei_Consolas_Hybrid:h11.5:b
+set guioptions-=e 					 " 使用内置tab样式,而不是gui
+"set guifont=DejaVu_Sans_Mono_for_Powerline:h11:b:cANSI:qDRAFT
+set guifont=YaHei_Consolas_Hybrid:h12.5    " :b
 " }}}
 
 " Format {{{
-set autoindent						" 自动缩进
+set autoindent					
 set smartindent
-syntax enable						" 开启语法高亮
-syntax on							" 允许用指定语法高亮配色替换默认方案
+syntax enable						
+syntax on							
 set tabstop=4
 set expandtab						" 将制表符扩展为空格
 set softtabstop=4					" 设置格式化时制表符占用空格数
@@ -118,12 +118,19 @@ set shiftwidth=4					" 让vim把连续的空格视为一个制表符
 " set foldmethod=indent             " 设置代码折叠方式为缩进
 " }}}
 
+" ----- Keymap -----{{{
+let mapleader=","
+nmap <leader>s :source $HOME/_vimrc<cr>
+nmap <leader>e :e $HOME/_vimrc<cr>
+nmap <leader>ee :e E:\<cr>
+nmap <leader>dd :e D:\<cr>
+" }}}
+
 " Other {{{
 set vb t_vb= 						" 关闭提示音
 set is                              " 输入即可搜索
 set ignorecase
-set hls                             " 高亮显示搜索结果
-filetype on							" 侦测文件类型
+set hlsearch                             " 高亮显示搜索结果
 set wildmenu						" vim 自身命令行模式智能补全
 set ruler							" 右下角显示光标位置的状态行
 set hidden 							" 避免必须保存修改才可以跳转buffer
@@ -131,5 +138,8 @@ set foldlevel=0                     " 设置折叠层次 0表示全部折叠
 set mouse=a
 set showmode
 set showcmd
-"autocmd GUIEnter * simalt ~x		" 设定windows下 gvim 启动时最大化
+set showmatch                       " 设置括号匹配
+set nrformats=                      " 默认10进制
+"set showtabline=2                   " 显示状态栏
+set guicursor+=a:blinkon0           " 设置光标不闪烁
 " }}}
