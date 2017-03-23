@@ -70,6 +70,9 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 " vim中文文档
 Plugin 'magexi/vimcdoc'
 
+" git
+Plugin 'vim-gitgutter'
+
 filetype on
 call vundle#end()
 
@@ -124,11 +127,13 @@ set expandtab
 set softtabstop=4					
 " 让vim把连续的空格视为一个制表符
 set shiftwidth=4					
+" 设置以unix格式保存文件
+set fileformat=unix
 " set foldmethod=indent             " 设置代码折叠方式为缩进
 
 " Keymap =========================================
 " 定义快捷键的前缀, 即<Leader>
-let mapleader=","
+let mapleader=" "
 nmap <leader>s :source $HOME/_vimrc<cr>
 nmap <leader>e :e $HOME/_vimrc<cr>
 nmap <leader>ee :e E:\<cr>
