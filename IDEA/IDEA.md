@@ -1,16 +1,18 @@
 # IDEA 常见设置、技巧及快捷键
 
-1. jsp编译在 `${user.home}/.IntelliJIdea/system/tomcat`
+- jsp编译在 `${user.home}/.IntelliJIdea/system/tomcat`
 
-4. 选中方法，`ctrl + alt + b`查看该方法的所有实现
+- 选中方法，`ctrl + alt + b`查看该方法的所有实现
 
-6. 快速添加try,catch代码块:选定代码块, `Ctrl+Alt+T`
+- 快速添加try,catch代码块:选定代码块, `Ctrl+Alt+T`
 
-7. `Ctrl+j`:调用模板
+- `Ctrl+j`:调用模板
 
-8. `&nbsp;`:不换行空格(`no break space`)
+- `&nbsp;`:不换行空格(`no break space`)
 
-9. `Setting->Inspections->Serialization issues->Serializable class without ’serialVersionUID`设置生成 serialVersionUID。
+- `Setting->Inspections->Serialization issues->Serializable class without ’serialVersionUID`设置生成 serialVersionUID。
+
+- `Alt+7/Ctrl+F12`：列出类的所有方法。
 
 
 ## 常规:
