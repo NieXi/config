@@ -1,19 +1,37 @@
 # IDEA 常见设置、技巧及快捷键
 
-- jsp编译在 `${user.home}/.IntelliJIdea/system/tomcat`
+- JSP 编译输出目录：
 
-- 选中方法，`ctrl + alt + b`查看该方法的所有实现
+    `${user.home}/.IntelliJIdea/system/tomcat`
 
-- 快速添加try,catch代码块:选定代码块, `Ctrl+Alt+T`
+- 查看选中方法的所有实现：
 
-- `Ctrl+j`:调用模板
+    选中方法，`ctrl + alt + b`
 
-- `&nbsp;`:不换行空格(`no break space`)
+- 生成常用代码块：
 
-- `Setting->Inspections->Serialization issues->Serializable class without ’serialVersionUID`设置生成 serialVersionUID。
+    添加 try，catch 代码块：选定代码块，`Ctrl+Alt+T`
 
-- `Alt+7/Ctrl+F12`：列出类的所有方法。
+- 调用模板：
 
+    `Ctrl+j`
+
+- 不换行空格：
+
+    `&nbsp;`：no break space
+
+- 设置 serialVersionUID 自动生成：
+
+    Setting -> Inspections -> Serialization issues -> Serializable class without serialVersionUID 
+
+- 列出类的所有结构：
+
+    `Alt+7/Ctrl+F12`
+
+- 设置行宽提示线，及自动换行：
+
+    1. Setting -> Code Style -> Right margin 和 Wrap on typing
+    2. Code Style -> Java -> Keep when reformatting -> Ensure right margin is not exceeded
 
 ## 常规:
 
