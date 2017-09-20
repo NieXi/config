@@ -379,6 +379,8 @@ Error message and password prompt
 
 <li>SQL SERVER 2008 R2</li>
 
+<li>SQL Server Management 初次登录服务注意事项</li>
+
 <li>Ubuntu</li>
 
 <li>Vim</li>
@@ -11538,10 +11540,10 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
-<div created="20170326041931049" creator="关小曦" modified="20170524074734989" modifier="关小曦" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20170326041931049" creator="关小曦" modified="20170920021128040" modifier="关小曦" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
-<div created="20170326041550792" creator="关小曦" modified="20170920014629246" modifier="关小曦" title="$:/state/sidebar">
+<div created="20170326041550792" creator="关小曦" modified="20170920021603504" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20170326084506717" creator="关小曦" modified="20170326084506717" modifier="关小曦" title="$:/state/tab--1498284803">
@@ -11568,10 +11570,10 @@ Error message and password prompt
 <div created="20170326034808844" creator="关小曦" modified="20170326085540526" modifier="关小曦" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20170326035726389" creator="关小曦" modified="20170326084537973" modifier="关小曦" title="$:/state/tab/moresidebar-401116514">
-<pre>$:/core/ui/MoreSideBar/Tags</pre>
+<div created="20170326035726389" creator="关小曦" modified="20170920021612159" modifier="关小曦" title="$:/state/tab/moresidebar-401116514">
+<pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20170326034850220" creator="关小曦" modified="20170326084536782" modifier="关小曦" title="$:/state/tab/sidebar--1835078512">
+<div created="20170326034850220" creator="关小曦" modified="20170920021624536" modifier="关小曦" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20170326041223279" creator="关小曦" modified="20170326044032428" modifier="关小曦" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -11601,7 +11603,7 @@ Error message and password prompt
 <div created="20170326041300803" creator="n" modified="20170326041309601" modifier="gr'xn'xi" title="$:/status/UserName">
 <pre>关小曦</pre>
 </div>
-<div list="[[Git for WIN10 乱码]] 记事本 About" title="$:/StoryList">
+<div list="记事本 About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170326084506717" creator="关小曦" modified="20170326084506717" modifier="关小曦" title="$:/temp/advancedsearch">
@@ -12466,6 +12468,35 @@ git commit -m&quot;`curl -s http://whatthecommit.com/index.txt`&quot;
 `sqlcmd -L`  
 
 [安装](https://jingyan.baidu.com/article/b24f6c822679b786bfe5dac3.html)  </pre>
+</div>
+<div created="20170920015123185" creator="关小曦" modified="20170920021601328" modifier="关小曦" tags="[[SQL Server]]" title="SQL Server Management 初次登录服务注意事项" type="text/x-markdown">
+<pre>每次安装完 SQL Server 后登录数据库都会忘记如何填写**服务器名称**，如何登录，多次踩坑之后，总结一下经验，记录下来，方便以后查阅。下面以我安装的 SQL Server 2008 R2 为例，进行说明。
+
+## 目前知道服务器名称的 4 种写法：
+
+1. 安装在本地机器上的 SQL Server 可以使用以下几种服务器名称：
+    
+    『.』、『localhost』、『127.0.0.1』、『local』
+
+2. 安装在其他机器上的 SQL Server，需要通过网络访问：
+
+    - 安装了 SQL Server 机器的 IP
+
+3. 可以是**计算机名**  
+
+4. 可以是**计算机名\实例名称**  
+
+
+## 身份验证
+
+1. 使用 Windows 身份验证
+    
+    如果是本地机器上的服务，可以使用上面所说的本地或者计算机名加上实例名的服务器名称，两者需要搭配才能登录成功。
+
+2. 使用 SQL Server 身份验证
+    
+    用户名一般都是 sa，密码一般是安装时候设置的，这个适用范围就比较广。
+</pre>
 </div>
 <div color="#ff8000" created="20170326044641693" creator="关小曦" modified="20170326090202181" modifier="关小曦" title="Ubuntu">
 <pre></pre>
