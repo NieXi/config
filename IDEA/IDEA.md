@@ -1,5 +1,10 @@
 # IDEA 常见设置、技巧及快捷键
 
+- 安装插件：
+
+    1. lombk：Setter/Getter 等方法通过注解生成，简介
+    2. IdeaVim：vim 插件
+
 - JSP 编译输出目录：
 
     `${user.home}/.IntelliJIdea/system/tomcat`
