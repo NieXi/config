@@ -12,6 +12,17 @@ augroup ft_vim
     autocmd!
     au FileType vim setlocal foldmethod=marker
 augroup END
+
+
+" 一键运行 Python 脚本
+map <F5> :call RunPY()<CR>
+func! RunPY()
+    exec "w"
+    if &filetype == 'python'
+        exec "! python.exe %"
+    endif
+endfunc
+
 " }}}
 
 " General {{{
@@ -54,11 +65,24 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Theme
 Plugin 'altercation/vim-colors-solarized'
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
 Plugin 'tomasr/molokai'
+" monokai原始背景色
+let g:molokai_original = 1
 Plugin 'vim-scripts/phd'
 
 " vim-powerline
 Plugin 'Lokaltog/vim-powerline'
+
+" 符号自动补全
+Plugin 'Raimondi/delimitMate'
+" for python docstring ", 特别有用
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+
+" 是否打开tabline
+" let g:airline#extensions#tabline#enabled = 1
 
 " markdown
 Plugin 'tangledhelix/vim-octopress'
@@ -70,6 +94,19 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'fholgado/minibufexpl.vim'
 let g:miniBufExplMapCTabSwitchBufs = 1
+
+" Python 语法检查
+Plugin 'w0rp/ale'
+" Python 自动提示
+Plugin 'davidhalter/jedi-vim'
+" Python 格式化
+Plugin 'google/yapf'
+autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+" 整理 import
+Plugin 'timothycrosley/isort'
+autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
+" Python 一键执行
+Plugin 'thinca/vim-quickrun'
 
 " html
 Plugin 'mattn/emmet-vim'
@@ -106,8 +143,10 @@ if has('gui_running')
     set nolist
     " 窗口大小
     "autocmd GUIEnter * simalt ~x		 " 设定windows下 gvim 启动时最大化
-    set guifont=Source_Code_Pro:h13:b:cANSI:qDRAFT      " 设置字体
+    "set guifont=Source_Code_Pro:h13:b:cANSI:qDRAFT      " 设置字体
     "set guifont=Inconsolata:h16:cANSI
+    " set guifont?
+    set guifont=YaHei_Consolas_Hybrid:h14:b:cANSI:qDRAFT
     set laststatus=2   "始终显示状态栏
 else
     colorscheme phd
@@ -221,6 +260,8 @@ nmap ,fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
 nnoremap <C-left> :bn<CR>
 nnoremap <C-right> :bp<CR>
 
+nnoremap <Leader>c I#<esc>
+
 " }}}
 
 " Other {{{
@@ -244,11 +285,11 @@ set noimdisable
 
 " 缩写
 iabbrev nx 聂曦
+"iabbrev py #! /usr/bin/env python\n# -*- coding: utf-8 -*-
 "}}}
 
-
-"au FileType xml exe ":silent 1,$!xmllint-1.0 \"%\" "
-"au FileType xml exe ":silent 1,$!xmllint-1.0 \"%\" --format --recover"
+"au FileType xml exe ":silent 1,$!xmllint \"%\" "
+"au FileType xml exe ":silent 1,$!xmllint \"%\" --format --recover"
 
 " VIM 笔记
 " normal 模式下输入 Q --->Ex 模式，即多行 cmd 模式
