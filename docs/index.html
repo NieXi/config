@@ -403,7 +403,7 @@ Error message and password prompt
 
 <li>小狼豪兼容问题</li>
 
-<li>记事本</li>
+<li>设置 Junit 生成代码路径</li>
 
 <li>资料</li>
 
@@ -8105,8 +8105,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20170326040251737" creator="关小曦" modified="20170326051432598" modifier="关小曦" title="$:/DefaultTiddlers">
-<pre>记事本 About</pre>
+<div created="20170326040251737" creator="关小曦" modified="20180303065947177" modifier="关小曦" title="$:/DefaultTiddlers">
+<pre>About</pre>
 </div>
 <div plugin-type="import" status="pending" title="$:/Import" type="application/json">
 <pre>{
@@ -11543,7 +11543,7 @@ Error message and password prompt
 <div created="20170326041931049" creator="关小曦" modified="20170920021128040" modifier="关小曦" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170326041550792" creator="关小曦" modified="20170920021603504" modifier="关小曦" title="$:/state/sidebar">
+<div created="20170326041550792" creator="关小曦" modified="20180303060936860" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20170326084506717" creator="关小曦" modified="20170326084506717" modifier="关小曦" title="$:/state/tab--1498284803">
@@ -11570,8 +11570,8 @@ Error message and password prompt
 <div created="20170326034808844" creator="关小曦" modified="20170326085540526" modifier="关小曦" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20170326035726389" creator="关小曦" modified="20170920021612159" modifier="关小曦" title="$:/state/tab/moresidebar-401116514">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20170326035726389" creator="关小曦" modified="20180303065708193" modifier="关小曦" title="$:/state/tab/moresidebar-401116514">
+<pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
 <div created="20170326034850220" creator="关小曦" modified="20170920021624536" modifier="关小曦" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/More</pre>
@@ -11603,7 +11603,7 @@ Error message and password prompt
 <div created="20170326041300803" creator="n" modified="20170326041309601" modifier="gr'xn'xi" title="$:/status/UserName">
 <pre>关小曦</pre>
 </div>
-<div list="记事本 About" title="$:/StoryList">
+<div list="About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170326084506717" creator="关小曦" modified="20170326084506717" modifier="关小曦" title="$:/temp/advancedsearch">
@@ -12086,8 +12086,14 @@ This plugin contains tools to help slice up long texts into individual tiddlers.
 <div created="20170326043959763" creator="关小曦" modified="20170326044015036" modifier="关小曦" title="$:/view">
 <pre>zoomin</pre>
 </div>
-<div created="20170326040338321" creator="关小曦" modified="20170326042021410" modifier="关小曦" title="About">
-<pre>找了很久终于找到了一个方便简单实用的个人WiKi管理工具 :-)</pre>
+<div created="20170326040338321" creator="关小曦" modified="20180303065702320" modifier="关小曦" title="About" type="text/x-markdown">
+<pre># 个人WiKi
+
+  - &lt;http://niexi.github.io/config/&gt;通过 Git 进行版本控制.
+  - TiddlyWiKi 学习资料: &lt;http://tw5-zh.tiddlyspot.com/&gt;
+  - &lt;http://jintaoworld.blogspot.com/2009/04/tiddly.html&gt;
+  - 另一种 amWiki.
+</pre>
 </div>
 <div created="20170326042905380" creator="关小曦" modified="20170326043007091" modifier="关小曦" tags="Win10" title="Capslock 与 L-Ctrl 互换" type="text/x-markdown">
 <pre>1. 方法一: 直接修改注册表.
@@ -12417,39 +12423,56 @@ git config --global gui.encoding utf-8
 <div color="" created="20170326090133668" creator="关小曦" modified="20170326094258436" modifier="关小曦" title="Mysql">
 <pre></pre>
 </div>
-<div created="20170326043403301" creator="关小曦" modified="20170326084808432" modifier="关小曦" tags="Mysql Win10" title="mysql.zip 安装包" type="text/x-markdown">
-<pre>1. 账户密码:
-        
-        username:root
-        password:root
+<div created="20170326043403301" creator="关小曦" modified="20180302031658484" modifier="关小曦" tags="Mysql Win10" title="mysql.zip 安装包" type="text/x-markdown">
+<pre># 安装步骤
 
-2. 解压 zip 压缩包到指定文件夹.
-3. 新建一个 my.ini 配置文件：
-        
-        [mysql]
-        ; 设置 mysql 客户端默认字符集
-        default-character-set=utf8
-        [mysqld]
-        ;设置 3306 端口
-        port = 3306 
-        ; 设置 mysql 的安装目录
-        basedir=E:\mysql5.7
-        ; 设置 mysql 数据库的数据的存放目录
-        datadir=E:\mysql5.7\data
-        ; 允许最大连接数
-        max_connections=200
-        ; 服务端使用的字符集默认为 8 比特编码的 latin1 字符集
-        character-set-server=utf8
-        ; 创建新表时将使用的默认存储引擎
-        default-storage-engine=INNODB 
+  1. 账户密码:  
+  username:root  
+  password:root
 
-4. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.再输入`mysqld install`回车运行就可以了(注意是mysqld不是mysql).
-5. 接下来执行`mysqld --initialize`初始化 data 目录(mysql会自动新建 date 文件夹).
-6. 在提示命令管理工具输入如下命令,进入安全模式:`mysqld --defaults-file=&quot;E:\mysql5.7\my.ini&quot; --console --skip-grant-tables`,路径根据安装的实际路径修改,保持该窗口运行.
-7. 然后以管理员权限打开新的命令提示窗口,cd 到 mysql 的 bin 目录.
-8. 修改密码,`use mysql;,update user set authentication_string=password(&quot;此处输入密码&quot;) where user=&quot;root&quot;`.
-9. 刷新数据库`flush privileges`.
-10. 添加 mysql 的 bin 目录到 Path 环境变量.
+  2. 解压 zip 压缩包到指定文件夹.
+
+  3. 任意目录新建一个 my.ini 配置文件：
+  ```
+  [mysql]
+  ; 设置 mysql 客户端默认字符集
+  default-character-set=utf8
+  [mysqld]
+  ;设置 3306 端口
+  port = 3306 
+  ; 设置 mysql 的安装目录
+  basedir=E:\mysql5.7
+  ; 设置 mysql 数据库的数据的存放目录
+  datadir=E:\mysql5.7\data
+  ; 允许最大连接数
+  max_connections=200
+  ; 服务端使用的字符集默认为 8 比特编码的 latin1 字符集
+  character-set-server=utf8
+  ; 创建新表时将使用的默认存储引擎
+  default-storage-engine=INNODB 
+  ```
+
+
+  4. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.再输入`mysqld install`回车运行就可以了(注意是mysqld不是mysql).
+
+  5. 接下来执行`mysqld --initialize`初始化 data 目录(mysql会自动新建 date 文件夹).
+
+  6. 在提示命令管理工具输入如下命令,进入安全模式:`mysqld --defaults-file=&quot;E:\mysql5.7\my.ini&quot; --console --skip-grant-tables`,路径根据安装的实际路径修改,保持该窗口运行.
+
+  7. 然后以管理员权限打开新的命令提示窗口,cd 到 mysql 的 bin 目录.
+
+  8. 修改密码,`use mysql;,update user set authentication_string=password(&quot;此处输入密码&quot;) where user=&quot;root&quot;`.
+
+  9. 刷新数据库`flush privileges`.
+
+  10. 添加 mysql 的 bin 目录到 Path 环境变量.
+
+
+# 参考
+  
+  - [Windows 下安装 MySql 5.7.12 zip 版](https://blog.itnmg.net/2016/04/17/windows-mysql-zip-install/)
+
+
 </pre>
 </div>
 <div created="20170326043454989" creator="关小曦" modified="20170524074748438" modifier="关小曦" tags="Git Win10" title="PortableGit 设置 .ssh" type="text/x-markdown">
@@ -12790,11 +12813,31 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
 2. 在上一层的 Category 目录下找到所有的`{13A016DF-560B-46CD-947A-4C3AF1E0E35D}`(一共两个),删除这两个注册表.
 </pre>
 </div>
-<div created="20170326050719746" creator="关小曦" modified="20170326090515377" modifier="关小曦" tags="" title="记事本" type="text/x-markdown">
-<pre>- &lt;http://magexi.cn/config/&gt;通过 Git 进行版本控制.
-- TiddlyWiKi 学习资料: &lt;http://tw5-zh.tiddlyspot.com/&gt;
-- &lt;http://jintaoworld.blogspot.com/2009/04/tiddly.html&gt;
-- 另一种 amWiki.</pre>
+<div created="20180303053345137" creator="关小曦" modified="20180303061715724" modifier="关小曦" tags="IDEA Java" title="设置 Junit 生成代码路径" type="text/x-markdown">
+<pre># 步骤
+
+Junit 自动生成的测试代码路径与 Maven 项目的目录结构不匹配
+
+1. 在 Plugins 中安装 Junit Generator 插件
+
+2. Ctrl+Alt+s，在 Other Settings 中打开 Junit Generator，修改对应的生成测试代码路径
+  ```
+  ${SOURCEPATH}/../../test/java/${PACKAGE}/${FILENAME}
+  ```
+
+3. 在待测试源代码中，通过 Alt+Insert 选择 Junit 来自动生成测试代码
+
+
+
+
+# 参考
+
+ - [JUnit -- IDEA](https://hacpai.com/article/1498525939465)
+ - [IDEA Junit 插件](https://www.jianshu.com/p/c37753b6dbd6)
+ - [JUnit4单元测试入门教程](https://www.jianshu.com/p/7088822e21a3)
+ - [IDEA MAVEN Junit 单元测试](http://blog.csdn.net/qqyouhappy/article/details/51872996)
+ - [Junit mockito解耦合测试](http://www.cnblogs.com/0201zcr/p/5886581.html)
+</pre>
 </div>
 <div created="20170326090516666" creator="关小曦" modified="20170326090550752" modifier="关小曦" tags="" title="资料" type="text/x-markdown">
 <pre>&lt;http://doc.zengrong.net/smart-questions/cn.html#translations&gt;</pre>
