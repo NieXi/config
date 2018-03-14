@@ -12529,7 +12529,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///F:/GitHub/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;file:///E:/github/config/docs/index.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -12549,7 +12549,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/F:/GitHub/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;/E:/github/config/docs/index.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -13441,7 +13441,7 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
 2. 在上一层的 Category 目录下找到所有的`{13A016DF-560B-46CD-947A-4C3AF1E0E35D}`(一共两个),删除这两个注册表.
 </pre>
 </div>
-<div created="20180313102534856" creator="关小曦" modified="20180314035449109" modifier="关小曦" tags="Git" title="常用 Git 命令汇总" type="text/x-markdown">
+<div created="20180313102534856" creator="关小曦" modified="20180314041948678" modifier="关小曦" tags="Git" title="常用 Git 命令汇总" type="text/x-markdown">
 <pre># 撤销第一条 commit
   
   通常撤销 commit 的方式是通过 `git reset `来移动 HEAD 指针到指定的 commit，但是第一次提交的 commit 前面是没有 commit 的，所以我们可以通过`git update-ref -d HEAD` 命令来将第一个 commit 撤销掉。  
@@ -13456,7 +13456,13 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
 
 # 拉去远程分支（本地没有）
 
-  `git checkout origin/remoteName -b localName`，获取远程分支 remoteName 到本地新分支 localName，并跳到 localName 分支
+  `git checkout origin/remoteName -b localName`，获取远程分支 remoteName 到本地新分支 localName，并跳到 localName 分支  
+  
+  参考：[Git 少用 Pull 多用 Fetch 和 Merge][]
+
+
+
+  [Git 少用 Pull 多用 Fetch 和 Merge]:https://www.oschina.net/translate/git-fetch-and-merge?print
 </pre>
 </div>
 <div created="20180303053345137" creator="关小曦" modified="20180314024248438" modifier="关小曦" tags="IDEA" title="设置 Junit 生成代码路径" type="text/x-markdown">
