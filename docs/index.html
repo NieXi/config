@@ -166,6 +166,10 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/showeditpreview</li>
+
+<li>$:/state/sidebar</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--2112689675</li>
@@ -12486,6 +12490,12 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
+<div created="20180315022237923" creator="关小曦" modified="20180315022237923" modifier="关小曦" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
+<div created="20180315022235000" creator="关小曦" modified="20180315022514626" modifier="关小曦" title="$:/state/sidebar">
+<pre>yes</pre>
+</div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
@@ -12529,7 +12539,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///E:/github/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;file:///F:/GitHub/config/docs/index.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -12549,7 +12559,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/E:/github/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;/F:/GitHub/config/docs/index.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -13036,49 +13046,41 @@ git config --global gui.encoding utf-8
 <div color="" created="20170326090133668" creator="关小曦" modified="20170326094258436" modifier="关小曦" title="Mysql">
 <pre></pre>
 </div>
-<div created="20170326043403301" creator="关小曦" modified="20180314025311021" modifier="关小曦" tags="Windows Mysql" title="MySQL.zip 安装包" type="text/x-markdown">
+<div created="20170326043403301" creator="关小曦" modified="20180315022512498" modifier="关小曦" tags="Windows Mysql" title="MySQL.zip 安装包" type="text/x-markdown">
 <pre># 安装步骤
 
-  1. 账户密码:  
-  username:root  
-  password:root
+  1. 解压 zip 压缩包
 
-  2. 解压 zip 压缩包到指定文件夹.
-
-  3. 任意目录新建一个 my.ini 配置文件：
-  ```
-  [mysql]
-  ; 设置 mysql 客户端默认字符集
-  default-character-set=utf8
-  [mysqld]
-  ;设置 3306 端口
-  port = 3306 
-  ; 设置 mysql 的安装目录
-  basedir=E:\mysql5.7
-  ; 设置 mysql 数据库的数据的存放目录
-  datadir=E:\mysql5.7\data
-  ; 允许最大连接数
-  max_connections=200
-  ; 服务端使用的字符集默认为 8 比特编码的 latin1 字符集
-  character-set-server=utf8
-  ; 创建新表时将使用的默认存储引擎
-  default-storage-engine=INNODB 
-  ```
+  2. 在任意目录下新建一个 my.ini 配置文件：
+    ```
+    [mysql]
+    ; 设置 mysql 客户端默认字符集
+    default-character-set=utf8
+    [mysqld]
+    ;设置 3306 端口
+    port = 3306 
+    ; 设置 mysql 的安装目录，根据实际情况修改
+    basedir=E:\mysql5.7
+    ; 设置 mysql 数据库的数据的存放目录根据实际情况修改
+    datadir=E:\mysql5.7\data
+    ; 允许最大连接数
+    max_connections=200
+    ; 服务端使用的字符集默认为 8 比特编码的 latin1 字符集
+    character-set-server=utf8
+    ; 创建新表时将使用的默认存储引擎
+    default-storage-engine=INNODB 
+    ```
 
 
-  4. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.再输入`mysqld install`回车运行就可以了(注意是mysqld不是mysql).
+  3. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.通过`mysqld install`来注册到 Windows 服务，注意是 mysqld 不是 mysql
 
-  5. 接下来执行`mysqld --initialize`初始化 data 目录(mysql会自动新建 date 文件夹).
+  4. 执行`mysqld --defaults-file=d:\mysql\my.ini --initialize-insecure --console`初始化，这个动作会新建 data 目录
 
-  6. 在提示命令管理工具输入如下命令,进入安全模式:`mysqld --defaults-file=&quot;E:\mysql5.7\my.ini&quot; --console --skip-grant-tables`,路径根据安装的实际路径修改,保持该窗口运行.
+  5. 在服务中启动 MySQL，然后登录，默认是没有密码的，直接回车登录即可。修改密码：`use mysql;,update user set authentication_string=password(&quot;root&quot;) where user=&quot;root&quot;`.
 
-  7. 然后以管理员权限打开新的命令提示窗口,cd 到 mysql 的 bin 目录.
+  6. 刷新数据库`flush privileges`，重新登录即可用新密码 root
 
-  8. 修改密码,`use mysql;,update user set authentication_string=password(&quot;此处输入密码&quot;) where user=&quot;root&quot;`.
-
-  9. 刷新数据库`flush privileges`.
-
-  10. 添加 mysql 的 bin 目录到 Path 环境变量.
+  7. 添加 mysql 的 bin 目录到 Path 环境变量
 
 
 # 参考
