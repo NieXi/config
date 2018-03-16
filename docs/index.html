@@ -12499,7 +12499,7 @@ Error message and password prompt
 <div created="20180315022237923" creator="关小曦" modified="20180315022237923" modifier="关小曦" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180316060129245" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180316065036888" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -12850,7 +12850,7 @@ git config --global gui.encoding utf-8
 在设置中改为 UTF-8
 </pre>
 </div>
-<div created="20170326042757827" creator="关小曦" modified="20180316060116139" modifier="关小曦" tags="Vim" title="Gvim 配置" type="text/x-markdown">
+<div created="20170326042757827" creator="关小曦" modified="20180316065020283" modifier="关小曦" tags="Vim" title="Gvim 配置" type="text/x-markdown">
 <pre># 一、Airline 插件配置
 
   1. Airline 需要特殊字体
@@ -12861,7 +12861,9 @@ git config --global gui.encoding utf-8
 
   3. _vimrc 配置文件中, 字体间的空格用`_`代替, Linux 中用`\`代替
 
+&lt;span id=&quot;jump&quot;&gt;&lt;/span&gt;
 # 二、为 Gvim 添加 Python 支持
+
 
 首先需要获取关于 Gvim 的两个信息：  
 
@@ -12878,6 +12880,15 @@ git config --global gui.encoding utf-8
 安装完成后，建议重启一次电脑，然后在 Gvim 命令行中输入'echo has(&quot;python&quot;)'或者'echo has(&quot;python3&quot;)'，结果为`1`就表示成功添加 Python 支持。   
 
 之前安装的是 Python3，步骤正常，但是通过上面命令然后返回 0，所以改用 Python2
+
+# 三、MarkDown 预览插件
+  安装的是  [iamcco/markdown-preview.vim][]  这款插件，通过命令直接在浏览器中预览 MarkDown 文件。  
+
+  这款插件的亮点在于，可以同步移动，效果参考作者的截图。使用起来很方便，一条命令即可自动打开浏览器预览。要求也很简单，需要 Python 支持，参考[第二条](#jump)
+
+  作者简介中是通过 Vim-Plug 安装的，通过 Vundle 安装也一样，README 文档下方是中文介绍，详细键盘映射配置可参考作者提供的内容
+
+[iamcco/markdown-preview.vim]:https://github.com/iamcco/markdown-preview.vim
 
 </pre>
 </div>
