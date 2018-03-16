@@ -208,13 +208,21 @@ Error message and password prompt
 
 <li>Capslock 与 L-Ctrl 互换</li>
 
+<li>Chrome 更新报错</li>
+
 <li>ConEmu</li>
 
 <li>English</li>
 
+<li>Excel</li>
+
+<li>Excel 使用技巧</li>
+
 <li>Git</li>
 
 <li>Git for WIN10 乱码</li>
+
+<li>Gvim 配置</li>
 
 <li>Hibernate</li>
 
@@ -243,8 +251,6 @@ Error message and password prompt
 <li>Ubuntu</li>
 
 <li>Vim</li>
-
-<li>Vim-powerline 设置</li>
 
 <li>Win 快捷键</li>
 
@@ -12493,7 +12499,7 @@ Error message and password prompt
 <div created="20180315022237923" creator="关小曦" modified="20180315022237923" modifier="关小曦" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180315022514626" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180316060129245" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -12729,6 +12735,11 @@ Error message and password prompt
     3. 双击导入注册表文件, 重启.
 </pre>
 </div>
+<div created="20180315123220801" creator="关小曦" modified="20180315123325172" modifier="关小曦" tags="Chrome Windows" title="Chrome 更新报错" type="text/x-markdown">
+<pre>Google浏览器Chrome更新到时候提示错误：  
+`检查更新时出错：无法启动更新检查（错误代码为 4: 0x80070005 -- system level）`  
+很有可能是Chrome更新服务被禁用了，我需要调整为手动启动即可。</pre>
+</div>
 <div created="20170326043027197" creator="关小曦" modified="20180314025211592" modifier="关小曦" tags="Windows" title="ConEmu" type="text/x-markdown">
 <pre>1. `Startup`--&gt; `Command line`:`%windir%\system32\bash.exe ~ -cur_console:p1`(直接启动bash,主目录).
 </pre>
@@ -12737,6 +12748,15 @@ Error message and password prompt
 <pre>check out:
 网络定义
 文件的检出是指从配置管理系统的文件库中取出一个副本作为自己的工作拷贝，并在这个工作拷贝上进行自己的工作。</pre>
+</div>
+<div color="#008080" created="20180315032205547" creator="关小曦" modified="20180315032211471" modifier="关小曦" title="Excel">
+<pre></pre>
+</div>
+<div created="20180315032132092" creator="关小曦" modified="20180315032408784" modifier="关小曦" tags="Excel" title="Excel 使用技巧" type="text/x-markdown">
+<pre># 数据量少，但编辑后保存较慢
+
+  &lt;http://www.1357k.com/1357k/7868.html&gt;
+</pre>
 </div>
 <div color="" created="20170326090122233" creator="关小曦" modified="20170326094250604" modifier="关小曦" title="Git">
 <pre></pre>
@@ -12828,6 +12848,37 @@ git config --global gui.encoding utf-8
 ## 改变 Git bash 的字符编码
 
 在设置中改为 UTF-8
+</pre>
+</div>
+<div created="20170326042757827" creator="关小曦" modified="20180316060116139" modifier="关小曦" tags="Vim" title="Gvim 配置" type="text/x-markdown">
+<pre># 一、Airline 插件配置
+
+  1. Airline 需要特殊字体
+  2. (Gvim for Win10)设置字体
+    * `set guifont=*`选中想要的字体
+    * 获取字体的名称
+    * 在 _vimrc 中添加字体设置
+
+  3. _vimrc 配置文件中, 字体间的空格用`_`代替, Linux 中用`\`代替
+
+# 二、为 Gvim 添加 Python 支持
+
+首先需要获取关于 Gvim 的两个信息：  
+
+  1. Gvim 是否支持 Python：  
+    在 Gvim 中输入命令 version 查看安装的 Gvim 是否支持 Python，正常情况下可以看到`+python/dyn`或者`+python3/dyn`，表示支持 Python2 或者 Python3。如果两个选项都是`-`，那说明安装的 Gvim 不支持 Python，可以区官网下载新版的Gvim，这个版本支持 Python 的。
+
+  2. Gvim 的版本：  
+    在 version 信息的左上部分可以看到当前安装的 Gvim 的位数，类似于`MS-Windows 32位 图形版本...`。  
+
+有了这两个信息之后，我们根据 Gvim 位数以及支持的 Python 版本来安装对应的 Python。  
+
+安装 Python 需要注意的是勾选添加环境变量选项。  
+
+安装完成后，建议重启一次电脑，然后在 Gvim 命令行中输入'echo has(&quot;python&quot;)'或者'echo has(&quot;python3&quot;)'，结果为`1`就表示成功添加 Python 支持。   
+
+之前安装的是 Python3，步骤正常，但是通过上面命令然后返回 0，所以改用 Python2
+
 </pre>
 </div>
 <div created="20170326094213175" creator="关小曦" modified="20170326094228687" modifier="关小曦" tags="Java" title="Hibernate" type="text/x-markdown">
@@ -13145,16 +13196,6 @@ git commit -m&quot;`curl -s http://whatthecommit.com/index.txt`&quot;
 </div>
 <div color="#408080" created="20170326044647839" creator="关小曦" modified="20170326090209513" modifier="关小曦" title="Vim">
 <pre></pre>
-</div>
-<div created="20170326042757827" creator="关小曦" modified="20170326042846434" modifier="关小曦" tags="Vim" title="Vim-powerline 设置" type="text/x-markdown">
-<pre>1. airline 需要特殊字体.
-2. (Gvim for Win10)设置字体:
-    * `set guifont=*`选中想要的字体.
-    * 获取字体的名称.
-    * 在 _vimrc 中添加字体设置.
-3. _vimrc 配置文件中, 字体间的空格用`_`代替, Linux 中用`\`代替.
-
-</pre>
 </div>
 <div created="20170326085614915" creator="关小曦" modified="20180314025536195" modifier="关小曦" tags="Windows" title="Win 快捷键" type="text/x-markdown">
 <pre># window快捷键
