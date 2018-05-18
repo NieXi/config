@@ -96,17 +96,17 @@ Plugin 'fholgado/minibufexpl.vim'
 let g:miniBufExplMapCTabSwitchBufs = 1
 
 " Python 语法检查
-Plugin 'w0rp/ale'
+" Plugin 'w0rp/ale'
 " Python 自动提示
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 " Python 格式化
-Plugin 'google/yapf'
-autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+" Plugin 'google/yapf'
+" autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 " 整理 import
-Plugin 'timothycrosley/isort'
-autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
+" Plugin 'timothycrosley/isort'
+" autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
 " Python 一键执行
-Plugin 'thinca/vim-quickrun'
+" Plugin 'thinca/vim-quickrun'
 
 " html
 Plugin 'mattn/emmet-vim'
@@ -117,9 +117,22 @@ Plugin 'magexi/vimcdoc'
 
 Plugin 'vimwiki/vimwiki'
 
+
+Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'iamcco/markdown-preview.vim'
+
 filetype on
 call vundle#end()
 "}}}
+
+" Plug {{{
+"call plug#begin('$VIM/vimfiles/plugged')
+
+"Plug 'iamcco/mathjax-support-for-mkdp'
+"Plug 'iamcco/markdown-preview.vim'
+
+"call plug#end()
+" }}}
 
 " GUI {{{
 if has('gui_running')
