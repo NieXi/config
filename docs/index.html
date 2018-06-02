@@ -212,6 +212,8 @@ Error message and password prompt
 
 <li>ConEmu</li>
 
+<li>Draft of '环境变量配置'</li>
+
 <li>English</li>
 
 <li>Excel</li>
@@ -231,8 +233,6 @@ Error message and password prompt
 <li>IDEA 常见问题解决方法</li>
 
 <li>Java</li>
-
-<li>Java 环境变量配置</li>
 
 <li>Linux</li>
 
@@ -273,6 +273,8 @@ Error message and password prompt
 <li>小狼豪兼容问题</li>
 
 <li>常用 Git 命令汇总</li>
+
+<li>环境变量配置</li>
 
 <li>设置 Junit 生成代码路径</li>
 
@@ -12498,10 +12500,10 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
-<div created="20180315022237923" creator="关小曦" modified="20180315022237923" modifier="关小曦" title="$:/state/showeditpreview">
+<div created="20180315022237923" creator="关小曦" modified="20180602060703668" modifier="关小曦" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180323073717538" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180602061230835" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -12531,7 +12533,7 @@ Error message and password prompt
 <div created="20170326041300803" creator="n" modified="20170326041309601" modifier="gr'xn'xi" title="$:/status/UserName">
 <pre>关小曦</pre>
 </div>
-<div list="[[Chrome 更新报错]] About" title="$:/StoryList">
+<div list="About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -12547,7 +12549,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///F:/GitHub/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;file:///F:/config/docs/index.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -12567,7 +12569,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/F:/GitHub/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;/F:/config/docs/index.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -12749,6 +12751,9 @@ Error message and password prompt
 <div created="20170326043027197" creator="关小曦" modified="20180314025211592" modifier="关小曦" tags="Windows" title="ConEmu" type="text/x-markdown">
 <pre>1. `Startup`--&gt; `Command line`:`%windir%\system32\bash.exe ~ -cur_console:p1`(直接启动bash,主目录).
 </pre>
+</div>
+<div modified="20180602060859872" modifier="关小曦" title="Draft of '环境变量配置'">
+<pre></pre>
 </div>
 <div created="20170327060844999" creator="关小曦" modified="20170327060915667" modifier="关小曦" tags="" title="English" type="text/x-markdown">
 <pre>check out:
@@ -12989,27 +12994,6 @@ ERROR Try running: 'npm install hexo --save'
 </div>
 <div color="" created="20170326045101774" creator="关小曦" modified="20170326094253107" modifier="关小曦" title="Java">
 <pre></pre>
-</div>
-<div created="20170326043320230" creator="关小曦" modified="20180314025221713" modifier="关小曦" tags="Windows Java" title="Java 环境变量配置" type="text/x-markdown">
-<pre>1. 安装目录结构:
-        
-        D:\Java\---jdk
-                ---jre
-
-2. 用户环境变量:
-        
-        JAVA_HOME:      D:\Java\jdk`(jdk安装目录)
-        CLASS_PATH:     .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
-        PATH:           ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
-
-3. 多版本 JDK
-        
-       Windows 下有 Java 管理工具启用选项，比较好的方法是修改 Java_Home
-       
-4. tomcat 注册为服务无法启动，改为exe
-
-        &lt;http://www.easytd.com/yichangjijin/d_16040601280.html &gt;
-</pre>
 </div>
 <div color="" created="20170326090129615" creator="关小曦" modified="20170326094256355" modifier="关小曦" title="Linux">
 <pre></pre>
@@ -13541,6 +13525,31 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
   [Git 少用 Pull 多用 Fetch 和 Merge]:https://www.oschina.net/translate/git-fetch-and-merge?print
   [代码回滚：Reset、Checkout、Revert 的选择]:https://github.com/geeeeeeeeek/git-recipes/wiki/5.2-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%EF%BC%9AReset%E3%80%81Checkout%E3%80%81Revert-%E7%9A%84%E9%80%89%E6%8B%A9  
   [git diff用法解释]:https://blog.csdn.net/joe_007/article/details/6957108
+</pre>
+</div>
+<div created="20170326043320230" creator="关小曦" modified="20180602061223550" modifier="关小曦" tags="Windows Java" title="环境变量配置" type="text/x-markdown">
+<pre># Java 环境变量配置
+1. 安装目录结构:
+```
+D:\Java\---jdk
+        ---jre
+```
+
+2. 用户环境变量:
+```
+JAVA_HOME:      D:\Java\jdk`(jdk安装目录)
+CLASS_PATH:     .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
+PATH:           ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+```
+
+3. 多版本 JDK
+Windows 下有 Java 管理工具启用选项，比较好的方法是修改 Java_Home
+       
+4. tomcat 注册为服务无法启动，改为exe
+&lt;http://www.easytd.com/yichangjijin/d_16040601280.html &gt;
+
+# Win10 环境变量设置框
+1. 在变量行首如果有`%`字符编辑框就会变成一个整行，不变与编辑，将非`%`开头的变量置于行首即可
 </pre>
 </div>
 <div created="20180303053345137" creator="关小曦" modified="20180314024248438" modifier="关小曦" tags="IDEA" title="设置 Junit 生成代码路径" type="text/x-markdown">
