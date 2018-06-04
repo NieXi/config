@@ -12502,10 +12502,10 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
-<div created="20180315022237923" creator="关小曦" modified="20180604044710278" modifier="关小曦" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20180315022237923" creator="关小曦" modified="20180604062344096" modifier="关小曦" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180602061230835" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180604062407807" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -12535,7 +12535,7 @@ Error message and password prompt
 <div created="20170326041300803" creator="n" modified="20170326041309601" modifier="gr'xn'xi" title="$:/status/UserName">
 <pre>关小曦</pre>
 </div>
-<div list="About" title="$:/StoryList">
+<div list="[[常用 Git 命令汇总]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -13503,26 +13503,26 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
 2. 在上一层的 Category 目录下找到所有的`{13A016DF-560B-46CD-947A-4C3AF1E0E35D}`(一共两个),删除这两个注册表.
 </pre>
 </div>
-<div created="20180313102534856" creator="关小曦" modified="20180323073712461" modifier="关小曦" tags="Git" title="常用 Git 命令汇总" type="text/x-markdown">
-<pre># 撤销第一条 commit
+<div created="20180313102534856" creator="关小曦" modified="20180604062402757" modifier="关小曦" tags="Git" title="常用 Git 命令汇总" type="text/x-markdown">
+<pre># 1. 撤销第一条 commit
   
   通常撤销 commit 的方式是通过 `git reset `来移动 HEAD 指针到指定的 commit，但是第一次提交的 commit 前面是没有 commit 的，所以我们可以通过`git update-ref -d HEAD` 命令来将第一个 commit 撤销掉。  
 
   更多有关撤销 commit 的命令可参考：&lt;https://github.com/geeeeeeeeek/git-recipes/wiki/5.2-代码回滚：Reset、Checkout、Revert-的选择&gt;
 
-# 删除远程分支的 commit
+# 2. 删除远程分支的 commit
   
   首先不推荐这么做，因为多人协作时，其他人可能会基于你想删除的那个 commit 发起了新的分支或者新的 commit，当你删除之后，别人提交的 commit 也会被删除。  
 
   `git reset HEAD~1`默认参数`--mixed`将本地历史纪录，和暂存区回退到上一个 commit，然后通过`git push -f`来强制推送本地的历史纪录至远程分支。`git reset`命令的使用可查看[代码回滚：Reset、Checkout、Revert 的选择][]
  
-# 拉去远程分支（本地没有）
+# 3. 拉去远程分支（本地没有）
 
   `git checkout origin/remoteName -b localName`，获取远程分支 remoteName 到本地新分支 localName，并跳到 localName 分支  
   
   参考：[Git 少用 Pull 多用 Fetch 和 Merge][]
 
-# git diff 命令的使用 
+# 4. git diff 命令的使用 
 
 `git diff`比较的是工作目录与暂存区之间的区别  
 
@@ -13531,8 +13531,14 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
 `git diff HEAD`比较的是工作目录（包括暂存的和未暂存的修改）与版本库最后一个版本的差别  
 参考：[git diff用法解释][]  
 
-  [Git 少用 Pull 多用 Fetch 和 Merge]:https://www.oschina.net/translate/git-fetch-and-merge?print
-  [代码回滚：Reset、Checkout、Revert 的选择]:https://github.com/geeeeeeeeek/git-recipes/wiki/5.2-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%EF%BC%9AReset%E3%80%81Checkout%E3%80%81Revert-%E7%9A%84%E9%80%89%E6%8B%A9  
+# 5. 删除远程分支上的文件
+
+- `git rm  -–cached filepath`：删除远程文件夹，但保留本地文件夹 
+- `git rm filepath`：删除远程文件和本地文件  
+
+
+[Git 少用 Pull 多用 Fetch 和 Merge]:https://www.oschina.net/translate/git-fetch-and-merge?print
+[代码回滚：Reset、Checkout、Revert 的选择]:https://github.com/geeeeeeeeek/git-recipes/wiki/5.2-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%EF%BC%9AReset%E3%80%81Checkout%E3%80%81Revert-%E7%9A%84%E9%80%89%E6%8B%A9  
   [git diff用法解释]:https://blog.csdn.net/joe_007/article/details/6957108
 </pre>
 </div>
