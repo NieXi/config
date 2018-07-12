@@ -12504,10 +12504,10 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
-<div created="20180315022237923" creator="关小曦" modified="20180711061558412" modifier="关小曦" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20180315022237923" creator="关小曦" modified="20180712053648915" modifier="关小曦" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180711061404439" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180712115325929" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -13251,12 +13251,12 @@ ERROR Try running: 'npm install hexo --save'
 <div color="" created="20170326090133668" creator="关小曦" modified="20170326094258436" modifier="关小曦" title="Mysql">
 <pre></pre>
 </div>
-<div created="20170326043403301" creator="关小曦" modified="20180315022512498" modifier="关小曦" tags="Windows Mysql" title="MySQL.zip 安装包" type="text/x-markdown">
+<div created="20170326043403301" creator="关小曦" modified="20180712115320815" modifier="关小曦" tags="Windows Mysql" title="MySQL.zip 安装包" type="text/x-markdown">
 <pre># 安装步骤
 
-  1. 解压 zip 压缩包
+1. 解压 zip 压缩包
 
-  2. 在任意目录下新建一个 my.ini 配置文件：
+2. 在任意目录下新建一个 my.ini 配置文件：
     ```
     [mysql]
     ; 设置 mysql 客户端默认字符集
@@ -13277,20 +13277,29 @@ ERROR Try running: 'npm install hexo --save'
     ```
 
 
-  3. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.通过`mysqld install`来注册到 Windows 服务，注意是 mysqld 不是 mysql
+3. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.通过`mysqld install`来注册到 Windows 服务，注意是 mysqld 不是 mysql
 
-  4. 执行`mysqld --defaults-file=d:\mysql\my.ini --initialize-insecure --console`初始化，这个动作会新建 data 目录
+4. 执行`mysqld --defaults-file=d:\mysql\my.ini --initialize-insecure --console`初始化，这个动作会新建 data 目录
 
-  5. 在服务中启动 MySQL，然后登录，默认是没有密码的，直接回车登录即可。修改密码：`use mysql;,update user set authentication_string=password(&quot;root&quot;) where user=&quot;root&quot;`.
+5. 在服务中启动 MySQL，默认是没有密码的，直接`mysql -u root -p`回车登录即可。
 
-  6. 刷新数据库`flush privileges`，重新登录即可用新密码 root
+  修改密码：`use mysql; update user set authentication_string=password(&quot;root&quot;) where user=&quot;root&quot;`，注意：8 版本的不适用  
 
-  7. 添加 mysql 的 bin 目录到 Path 环境变量
+  8 以后版本的认证方式改为 `caching_sha2_password`，第三方工具可能还不支持，比如 Navicat ，可以通过更新驱动，  
+  或者通过`ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER`修改加密方式，  
+  然后再修改以下密码`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'`  
+
+6. 刷新数据库`flush privileges`，重新登录即可用新密码 root
+
+7. 添加 mysql 的 bin 目录到 Path 环境变量
 
 
 # 参考
   
-  - [Windows 下安装 MySql 5.7.12 zip 版](https://blog.itnmg.net/2016/04/17/windows-mysql-zip-install/)
+- [Windows 下安装 MySql 5.7.12 zip 版](https://blog.itnmg.net/2016/04/17/windows-mysql-zip-install/)
+- [MYSQL-8.0.11 修改密码 设置远程连接 - CSDN博客](https://blog.csdn.net/Liqinghai058/article/details/80434504)
+- [win10安装mysql 8.0.11 zip包 - CSDN博客](https://blog.csdn.net/eatGood_wearWell/article/details/80276648)
+- [MySQL报错： Found option without preceding group in config file:XXX; Fatal error in defaults handling. - CSDN博客](https://blog.csdn.net/Life_android/article/details/56512606)
 
 
 </pre>
