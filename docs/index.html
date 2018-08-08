@@ -12507,7 +12507,7 @@ Error message and password prompt
 <div created="20180315022237923" creator="关小曦" modified="20180712053648915" modifier="关小曦" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180712115325929" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180713094806799" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -13102,10 +13102,13 @@ ERROR Try running: 'npm install hexo --save'
         多        对     一
 </pre>
 </div>
-<div created="20180303072829478" creator="关小曦" modified="20180314030207213" modifier="关小曦" tags="IDEA" title="IDEA 常见问题解决方法" type="text/x-markdown">
+<div created="20180303072829478" creator="关小曦" modified="20180808062003511" modifier="关小曦" tags="IDEA" title="IDEA 常见问题解决方法" type="text/x-markdown">
 <pre># 一、乱码解决办法
   
   - [IntelliJ IDEA 乱码解决方案 （项目代码、控制台等）](http://www.cnblogs.com/vhua/p/idea_1.html)
+
+  - 文件编码转换：  
+    reload 以正常编码方式读取文件，然后用 convert 进行转换。
 
 
 # 二、Maven 项目 JDK 版本
@@ -13580,34 +13583,48 @@ git commit -m&quot;`curl -s http://whatthecommit.com/index.txt`&quot;
 <div color="#0080ff" created="20170326044659927" creator="关小曦" modified="20170326044659927" modifier="关小曦" title="Win10">
 <pre></pre>
 </div>
-<div created="20170326083756695" creator="关小曦" modified="20180314025550085" modifier="关小曦" tags="Windows" title="Win10 下的坑" type="text/x-markdown">
-<pre># 任务栏自动隐藏失效:
-- 写一个 bat 脚本, 重启一下资源管理器就行.
-- 脚本信息:
-        
-        askkill /f /im explorer.exe
-        explorer.exe
+<div created="20170326083756695" creator="关小曦" modified="20180713092442055" modifier="关小曦" tags="Windows" title="Win10 下的坑" type="text/x-markdown">
+<pre># 1. 任务栏自动隐藏失效:
 
-# 命令行修复 Win10 主引导记录:
-无法自动修复主引导记录时, 采用此方法.
-- 使用光盘或者装机 U 盘, 进入`命令提示符`.
-- 执行`bcdedit /enum`, 查看主引导记录是否损坏.
+- 写一个 bat 脚本, 重启一下资源管理器就行.
+- 脚本信息:  
+  askkill /f /im explorer.exe  
+  explorer.exe
+
+# 2. 命令行修复 Win10 主引导记录:
+
+无法自动修复主引导记录时, 采用此方法  
+
+- 使用光盘或者装机 U 盘, 进入`命令提示符`
+- 执行`bcdedit /enum`, 查看主引导记录是否损坏
 - 执行如下命令找到坏扇区并恢复可读信息:
-        
-        chkdsk /r
+  chkdsk /r
 
 - 检查完成之后, 可重启查看问题是否解决.
 - 如果仍有问题, 再次进入`命令提示符`依次执行如下命令:
-        
-        sfc /scannow
-
-        BOOTREC /SCANOS
-        BOOTREC /FIXMBR
-        BOOTREC /FIXBOOT
-        BOOTREC /REBUILDBCD
+  sfc /scannow  
+  BOOTREC /SCANOS  
+  BOOTREC /FIXMBR  
+  BOOTREC /FIXBOOT  
+  BOOTREC /REBUILDBCD
 
 - 完成之后再次使用`bcdedit /enum`命令检查.
 -[参考](https://www.sysgeek.cn/fix-windows-10-master-boot-record-corrupted/)
+
+# 3. 修改 CMD 编码
+
+注：CHCP是一个计算机指令，能够显示或设置活动代码页编号  
+
+代码页  描述  
+65001   UTF-8代码页  
+950 繁体中文  
+936 简体中文默认的GBK  
+437 MS-DOS 美国英语  
+
+通过CHCP设置编码在重启 CMD 后会失效，永久更改 CMD 编码值需要修改注册表，方法如下：
+1. 在注册表中找到：`HKEY_CURRENT_USER\Console\%SystemRoot%_system32_cmd.exe`
+2. 新建一个 DWORD（32位值），命名为`CodePage`，值设为 65001
+3. 已有 `CodePage` 的话，修改它，改为十进制，65001
 </pre>
 </div>
 <div color="#0000ff" created="20180314025630365" creator="关小曦" modified="20180314025630365" modifier="关小曦" title="Windows">
