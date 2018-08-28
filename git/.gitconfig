@@ -10,7 +10,9 @@
 	st = status
 	sa = stash apply
 	sm = stash save
+    su = stash -u
     sl = stash list
+    sp = stash pop
     sc = stash clear
     cm = commit
     cma = commit --amend

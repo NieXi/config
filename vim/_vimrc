@@ -6,7 +6,10 @@
 "   File Name     : _vimrc
 "   Last Modified : 2018-06-02 14:25
 "   Describe      :
-"
+"        mm
+"     /^(  )^\  
+"     \,(..),/      
+"       V~~V    
 " ====================================================
 
 " VimScript settings {{{
@@ -166,7 +169,7 @@ set tabstop=4   "一个 tab 键占的列数
 set softtabstop=4   "敲入 tab 键时，实际占用的列数 
 set expandtab       " 将制表符转换为空格
 set shiftwidth=4	"自动缩进所占的列数
-set fileformat=unix     
+"set fileformat=unix     
 syntax enable						
 syntax on
 " }}}
