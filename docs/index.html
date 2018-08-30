@@ -12537,7 +12537,7 @@ Error message and password prompt
 <div created="20170326041300803" creator="n" modified="20170326041309601" modifier="gr'xn'xi" title="$:/status/UserName">
 <pre>关小曦</pre>
 </div>
-<div list="About" title="$:/StoryList">
+<div list="[[设置 Junit 生成代码路径]] About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -12791,7 +12791,7 @@ MIME 消息能包含文本、图像、音频、视频以及其他应用程序专
 - [w3cSchool](http://www.w3school.com.cn/media/media_mimeref.asp)
 </pre>
 </div>
-<div created="20180303053345137" creator="关小曦" modified="20180314024248438" modifier="关小曦" tags="IDEA" title="设置 Junit 生成代码路径" type="text/x-markdown">
+<div created="20180303053345137" creator="关小曦" modified="20180830002549562" modifier="关小曦" tags="IDEA" title="设置 Junit 生成代码路径" type="text/x-markdown">
 <pre># 步骤
 
 Junit 自动生成的测试代码路径与 Maven 项目的目录结构不匹配
@@ -12804,6 +12804,10 @@ Junit 自动生成的测试代码路径与 Maven 项目的目录结构不匹配
   ```
 
 3. 在待测试源代码中，通过 Alt+Insert 选择 Junit 来自动生成测试代码
+
+4. Junit 生成的代码日期注释为 GBK 编码，一般编码皆使用 UTF-8，会出现乱码  
+  解决方法：  
+  在 Junit4 模板中，将`$date`修改为`$today`即可
 
 
 
