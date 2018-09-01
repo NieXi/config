@@ -254,6 +254,8 @@ Error message and password prompt
 
 <li>IDM 扩展安装</li>
 
+<li>IDM 增加下载线程数</li>
+
 <li>Java</li>
 
 <li>Linux</li>
@@ -12504,10 +12506,10 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
-<div created="20180315022237923" creator="关小曦" modified="20180712053648915" modifier="关小曦" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20180315022237923" creator="关小曦" modified="20180901021045884" modifier="关小曦" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180810031431025" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180901021132935" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -12537,7 +12539,7 @@ Error message and password prompt
 <div created="20170326041300803" creator="n" modified="20170326041309601" modifier="gr'xn'xi" title="$:/status/UserName">
 <pre>关小曦</pre>
 </div>
-<div list="[[设置 Junit 生成代码路径]] About" title="$:/StoryList">
+<div list="About" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -13150,6 +13152,12 @@ ERROR Try running: 'npm install hexo --save'
 1. 找到 IDM 安装目录下的 `IDMGCExt.crx` 
 2. 打开 Chrome 扩展应用的开发者选项
 3. 将 crx 文件拖到扩展应用界面，会出现提示安装，确认即可</pre>
+</div>
+<div created="20180901020355866" creator="关小曦" modified="20180901021129827" modifier="关小曦" tags="Windows" title="IDM 增加下载线程数" type="text/x-markdown">
+<pre>1. 打开 IDM `选项`，选中`连接`
+2. 选择`最大连接数`，一般为 32，然后**划重点**：将`连接类型/速度`修改为`较高速率连接`，否则最大连接数不生效，修改完成后无须重启，直接下载即可，对于正在下载的资源，可以先暂停，然后再开始下载。
+3. 另，可通过修改注册表来更改最大连接数，超过 32 限制  
+   `HKEY_CURRENT_USER\Software\DownloadManager`，选择 `MaxConnectionsNumber` 项，更改成你想要的线程数</pre>
 </div>
 <div color="" created="20170326045101774" creator="关小曦" modified="20170326094253107" modifier="关小曦" title="Java">
 <pre></pre>
