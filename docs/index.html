@@ -12506,10 +12506,10 @@ Error message and password prompt
 <div created="20170326040207686" modified="20170326040218622" title="$:/SiteTitle">
 <pre>关小曦的个人WiKi</pre>
 </div>
-<div created="20180315022237923" creator="关小曦" modified="20180901021045884" modifier="关小曦" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20180315022237923" creator="关小曦" modified="20180905030957728" modifier="关小曦" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
-<div created="20180315022235000" creator="关小曦" modified="20180901021132935" modifier="关小曦" title="$:/state/sidebar">
+<div created="20180315022235000" creator="关小曦" modified="20180905031427632" modifier="关小曦" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20180314025930389" creator="关小曦" modified="20180314025935226" modifier="关小曦" title="$:/state/tab--1963855381">
@@ -13108,8 +13108,8 @@ ERROR Try running: 'npm install hexo --save'
         多        对     一
 </pre>
 </div>
-<div created="20180303072829478" creator="关小曦" modified="20180810031421311" modifier="关小曦" tags="IDEA" title="IDEA 常见问题解决方法" type="text/x-markdown">
-<pre># 一、乱码解决办法
+<div created="20180303072829478" creator="关小曦" modified="20180905031426139" modifier="关小曦" tags="IDEA" title="IDEA 常见问题解决方法" type="text/x-markdown">
+<pre># 1. 乱码解决办法
   
   - [IntelliJ IDEA 乱码解决方案 （项目代码、控制台等）](http://www.cnblogs.com/vhua/p/idea_1.html)
 
@@ -13120,7 +13120,7 @@ ERROR Try running: 'npm install hexo --save'
     将`C:\Users\**\.IntelliJIdea2018.2\config\plugins`清空后，重启 IDEA 即可
 
 
-# 二、Maven 项目 JDK 版本
+# 2.Maven 项目 JDK 版本
 
   IDEA 编译 Maven 项目时：`Warning:java: 源值1.5已过时, 将在未来所有发行版中删除`，原因是默认的编译版本过低。
   在 pom.xml 种添加如下配置：
@@ -13134,6 +13134,12 @@ ERROR Try running: 'npm install hexo --save'
   `Ctrl+Shift+Alt+S`，在 Modules 的 Source 中将 Language Level 修改为 8  
   
   `Ctrl+Alt+S`打开设置，在 Build 中的 Java Compiler，将默认 JDK 和当前 Modual 的JDK版本切换为1.8即可
+
+# 3. Maven 编译时未生成 target 输出目录
+
+原因：在`pom.xml`的项目属性中将`packaging`配置为`pom`时，通过 Maven 的 compile 不会生成 target，使用 IDEA 的 Build Project 会生成 target 目录，但资源文件不会复制到target 目录，即使在`pom.xml`配置了资源文件的输出路径。  
+
+解决办法：直接删除该属性即可。
 
 </pre>
 </div>
