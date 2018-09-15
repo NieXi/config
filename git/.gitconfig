@@ -1,32 +1,40 @@
 [user]
-	email = xilemon3@gmail.com
-	name = NieXi
+    email = xilemon3@gmail.com
+    name = NieXi
 [core]
-	editor = gvim
-	quotepath = false
+    editor = gvim
+    quotepath = false
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    br =branch
-	st = status
-	sa = stash apply
-	sm = stash save
-    su = stash -u
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    br = branch
+    cm = commit
+    cma = commit --amend
+    co = checkout
+    st = status
+    sa = stash apply
+    sd = stash drop
+    su = stash save -u
     sl = stash list
     sp = stash pop
     sc = stash clear
-    cm = commit
-    cma = commit --amend
     rs = reset
     rsm = reset --soft 
     rhm = reset --hard
     df = diff
-    co = checkout
 [gui]
-	encoding = utf-8
+    encoding = utf-8
 [i18n]
     commitencoding = utf-8
-	logoutputencoding = utf-8
+    logoutputencoding = utf-8
 [i18n "commit"]
-	encoding = utf-8
+    encoding = utf-8
 [winUpdater]
-	recentlySeenVersion = 2.18.0.windows.1
+    recentlySeenVersion = 2.18.0.windows.1
+[diff]
+    tool = bc
+[difftool "bc"]
+    path = C:/Program Files/Beyond Compare 4/BComp.exe
+[merge]
+    tool = bc
+[mergetool "bc"]
+    path = C:/Program Files/Beyond Compare 4/BComp.exe
