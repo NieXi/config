@@ -6,10 +6,6 @@
 "   File Name     : _vimrc
 "   Last Modified : 2018-06-02 14:25
 "   Describe      :
-"        mm
-"     /^(  )^\  
-"     \,(..),/      
-"       V~~V    
 " ====================================================
 
 " VimScript settings {{{
@@ -65,51 +61,25 @@ Plugin 'altercation/vim-colors-solarized'
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
-Plugin 'tomasr/molokai'
-" monokai原始背景色
-let g:molokai_original = 1
-Plugin 'vim-scripts/phd'
 
-" vim-powerline
 Plugin 'Lokaltog/vim-powerline'
-
-" 符号自动补全
-Plugin 'Raimondi/delimitMate'
-" for python docstring ", 特别有用
-au FileType python let b:delimitMate_nesting_quotes = ['"']
-
-" 是否打开tabline
-" let g:airline#extensions#tabline#enabled = 1
 
 " markdown 语法支持
 Plugin 'tangledhelix/vim-octopress'
 
+Plugin 'othree/xml.vim'
+
 Plugin 'scrooloose/nerdtree'
 map <F2> :NERDTreeToggle<CR>
 
-Plugin 'kien/ctrlp.vim'
-
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fholgado/minibufexpl.vim'
 let g:miniBufExplMapCTabSwitchBufs = 1
 
-" html
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/xml.vim'
-
-" vim中文文档
 Plugin 'magexi/vimcdoc'
 
-" markdown 预览
-Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
-
-" 版权信息自动插入更新
-Plugin 'nine2/vim-copyright'
-let g:file_copyright_name = "NieXi"
-let g:file_copyright_email = "xilemon3@gmail.com"
-let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py','python','h', 'hpp', 'c', 'cpp', 'java']
-" :CopyrightAdd 在现有文件中增加文件头
-" :CopyrightUpdate 更新现有文件头信息
+Plugin 'iamcco/mathjax-support-for-mkdp'
 
 filetype on
 call vundle#end()
@@ -117,11 +87,10 @@ call vundle#end()
 
 " GUI {{{
 if has('gui_running')
+
     set background=dark
     colorscheme solarized
-    "colorscheme molokai
-    "colorscheme phd
-    "colorscheme Tomorrow-Night
+
     winpos 500 100                       " 设定启动位置
     set lines=30 columns=90
     " 使用内置 tab 样式而不是 gui
@@ -140,8 +109,9 @@ if has('gui_running')
     "set guifont=Source_Code_Pro:h13:b:cANSI:qDRAFT      " 设置字体
     "set guifont=Inconsolata:h16:cANSI
     " set guifont?
-    "set guifont=YaHei_Consolas_Hybrid:h14:b:cANSI:qDRAFT
-    set guifont=Consolas-with-Yahei:h14:b:cANSI:qDRAFT
+    "set guifont=Consolas-with-Yahei:h14:b:cANSI:qDRAFT
+    set guifont=YaHei_Consolas_Hybrid:h14:b:cANSI:qDRAFT
+
     set laststatus=2   "始终显示状态栏
 else
     colorscheme phd
