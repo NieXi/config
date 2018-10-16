@@ -15,6 +15,7 @@
     sd = stash drop
     su = stash save -u
     sl = stash list
+    ss = stash show
     sp = stash pop
     sc = stash clear
     rs = reset
@@ -29,7 +30,7 @@
 [i18n "commit"]
     encoding = utf-8
 [winUpdater]
-    recentlySeenVersion = 2.18.0.windows.1
+	recentlySeenVersion = 2.19.1.windows.1
 [diff]
     tool = bc
 [difftool "bc"]
