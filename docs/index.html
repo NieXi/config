@@ -12555,19 +12555,19 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///F:/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;https://niexi.github.io/config/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;niexi.github.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;niexi.github.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -12575,7 +12575,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/F:/config/docs/index.html&quot;
+            &quot;text&quot;: &quot;/config/&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -12583,7 +12583,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;https://niexi.github.io&quot;
         }
     }
 }</pre>
@@ -13288,7 +13288,7 @@ WIN10 切换输入法快捷键为 `Ctrl+Space`，与 IDEA 的智能提示快捷�
 <div color="" created="20170326090133668" creator="关小曦" modified="20170326094258436" modifier="关小曦" title="Mysql">
 <pre></pre>
 </div>
-<div created="20170326043403301" creator="关小曦" modified="20180712115320815" modifier="关小曦" tags="Windows Mysql" title="MySQL.zip 安装包" type="text/x-markdown">
+<div created="20170326043403301" creator="关小曦" modified="20181019151507344" modifier="关小曦" tags="Windows Mysql" title="MySQL.zip 安装包" type="text/x-markdown">
 <pre># 安装步骤
 
 1. 解压 zip 压缩包
@@ -13316,7 +13316,7 @@ WIN10 切换输入法快捷键为 `Ctrl+Space`，与 IDEA 的智能提示快捷�
 
 3. 以管理员身份打开 cmd 窗口后,将目录切换到你的解压文件 bin 目录下.通过`mysqld install`来注册到 Windows 服务，注意是 mysqld 不是 mysql
 
-4. 执行`mysqld --defaults-file=d:\mysql\my.ini --initialize-insecure --console`初始化，这个动作会新建 data 目录
+4. 执行`mysqld --defaults-file=d:\mysql\my.ini --initialize-insecure --console`初始化，这个动作会新建 data 目录，报`0xc000007b`或者缺少 DLL 时，安装 VC++ 库即可，WIN10 可以安装2017版的 
 
 5. 在服务中启动 MySQL，默认是没有密码的，直接`mysql -u root -p`回车登录即可。
 
