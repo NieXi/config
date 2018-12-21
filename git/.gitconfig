@@ -30,12 +30,17 @@
 [i18n "commit"]
     encoding = utf-8
 [winUpdater]
-	recentlySeenVersion = 2.19.1.windows.1
+	recentlySeenVersion = 2.20.1.windows.1
 [diff]
-    tool = bc
-[difftool "bc"]
-    path = C:/Program Files/Beyond Compare 4/BComp.exe
+    tool = bc4
+[difftool]
+    prompt = false
+[difftool "bc4"]
+    cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\""
 [merge]
-    tool = bc
-[mergetool "bc"]
-    path = C:/Program Files/Beyond Compare 4/BComp.exe
+    tool = bc4
+[mergetool]
+    prompt = false
+    keepBackup = false #禁用使用 mergetool 解决冲突时会产生 *.orig 的功能
+[mergetool "bc4"]
+    cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\""
