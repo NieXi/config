@@ -22,6 +22,7 @@
     rsm = reset --soft 
     rhm = reset --hard
     df = diff
+    mnf = merge --no-ff
 [gui]
     encoding = utf-8
 [i18n]
