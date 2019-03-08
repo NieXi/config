@@ -31,7 +31,7 @@
 [i18n "commit"]
     encoding = utf-8
 [winUpdater]
-	recentlySeenVersion = 2.20.1.windows.1
+	recentlySeenVersion = 2.21.0.windows.1
 [diff]
     tool = bc4
 [difftool]
@@ -42,6 +42,6 @@
     tool = bc4
 [mergetool]
     prompt = false
-    keepBackup = false #禁用使用 mergetool 解决冲突时会产生 *.orig 的功能
+    keepBackup = false #禁用时用 mergetool 解决冲突时会产生 *.orig 的功能
 [mergetool "bc4"]
     cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\""
