@@ -45,3 +45,8 @@
     keepBackup = false #禁用时用 mergetool 解决冲突时会产生 *.orig 的功能
 [mergetool "bc4"]
     cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\""
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
