@@ -249,6 +249,7 @@ set noimdisable
 
 "}}}
 
+set pythonthreedll=python37.dll
 
 " VIM 笔记
 " normal 模式下输入 Q --->Ex 模式，即多行 cmd 模式
