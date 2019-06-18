@@ -78,8 +78,7 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 
 Plugin 'magexi/vimcdoc'
 
-Plugin 'iamcco/markdown-preview.vim'
-Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'iamcco/markdown-preview.nvim'
 
 filetype on
 call vundle#end()
@@ -160,8 +159,8 @@ map <leader>th :tabp<cr>
 map <leader>tl :tabn<cr>
 
 inoremap jk <esc>
-"inoremap <esc> <nop>
-"inoremap <C-[> <nop>
+inoremap <esc> <nop>
+inoremap <C-[> <nop>
 
 " 移动分割窗口
 nmap <C-j> <C-W>j
