@@ -2,27 +2,37 @@
     email = xilemon3@gmail.com
     name = NieXi
 [core]
-    editor = gvim
+	editor = gvim -f
     quotepath = false
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    st = status
+
     br = branch
+    co = checkout
+
     cm = commit -v
     cma = commit --amend
-    co = checkout
-    st = status
-    sa = stash apply
-    sd = stash drop
-    su = stash save -u
+    rs = reset
+    rsm = reset --soft  # 软重置
+    rhm = reset --hard  # 硬重置
+    df = diff
+    mnf = merge --no-ff # 不使用快速合并
+
+    sa = stash apply # 应用第一个或指定 stash
+    sd = stash drop # 删除第一个或指定 stash
+    sve = stash save # 保存已经 add 的变更
+    sk = stash save -k # 不保存已经 add 的变更 --keep-index
+    su = stash save -u # 保存所有变更  --include-untracked
+    signore = stash save -a # 保存所有文件，包含 .gitignore 忽略的文件 --all 
     sl = stash list
-    ss = stash show
+    sshow = stash show
     sp = stash pop
     sc = stash clear
-    rs = reset
-    rsm = reset --soft 
-    rhm = reset --hard
-    df = diff
-    mnf = merge --no-ff
+
+    cdf = clean -d -f # 清空未跟踪的文件
+
 [gui]
     encoding = utf-8
 [i18n]
@@ -53,6 +63,11 @@
 
 [commit]
     template = ~/.gitmessage
+
+#[http]
+    #proxy = socks5://127.0.0.1:1080
+#[https]
+    #proxy = socks5://127.0.0.1:1080
 
 # head: <type>(<scope>): <subject>
 # - type: feat, fix, docs, style, refactor, test, chore
