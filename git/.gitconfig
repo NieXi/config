@@ -1,9 +1,10 @@
 [user]
-    email = xilemon3@gmail.com
-    name = NieXi
+	name = niexi
+	email = xilemon3@gmail.com
 [core]
 	editor = gvim -f
     quotepath = false
+	excludesfile = /Users/xi/.gitignore_global
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -13,7 +14,7 @@
     co = checkout
 
     cm = commit -v
-    cma = commit --amend
+    cma = commit --amend #commit --amend --date="$(date -R)" 修改时间
     rs = reset
     rsm = reset --soft  # 软重置
     rhm = reset --hard  # 硬重置
@@ -33,6 +34,7 @@
 
     cdf = clean -d -f # 清空未跟踪的文件
 
+# 处理编码 start
 [gui]
     encoding = utf-8
 [i18n]
@@ -40,29 +42,36 @@
     logoutputencoding = utf-8
 [i18n "commit"]
     encoding = utf-8
-[winUpdater]
-    recentlySeenVersion = 2.21.0.windows.1
-[diff]
-    tool = bc4
-[difftool]
-    prompt = false
-[difftool "bc4"]
-    cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\""
-[merge]
-    tool = bc4
-[mergetool]
-    prompt = false
-    keepBackup = false #禁用时用 mergetool 解决冲突时会产生 *.orig 的功能
-[mergetool "bc4"]
-    cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\""
-[difftool "sourcetree"]
-    cmd = '' \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-    cmd = "'' "
-    trustExitCode = true
+# 处理编码 end
 
 [commit]
-    template = ~/.gitmessage
+	template = ~/.gitmessage
+
+
+# Win diff 配置 ============================================================>
+# [diff]
+#    tool = bc4
+# [difftool]
+#     prompt = false
+# [difftool "bc4"]
+#     cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\""
+# [merge]
+#     tool = bc4
+# [mergetool]
+#     prompt = false
+#     keepBackup = false #禁用时用 mergetool 解决冲突时会产生 *.orig 的功能
+# [mergetool "bc4"]
+#     cmd = "\"C:/Program Files/Beyond Compare 4/BComp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\""
+# [difftool "sourcetree"]
+# 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+# 	path = 
+# [mergetool "sourcetree"]
+# 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+# 	trustExitCode = true
+#
+# Win diff 配置 <============================================================
+
+
 
 #[http]
     #proxy = socks5://127.0.0.1:1080
