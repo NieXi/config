@@ -245,6 +245,8 @@ set nrformats=      " 默认10进制
 "set showtabline=2  " 显示状态栏
 set guicursor+=a:blinkon0       " 禁止光标闪烁
 set noimdisable
+" GVIM win10 insert 模式第三方输入法无法输入中文
+set iminsert=2 " https://github.com/rime/weasel/issues/232#issuecomment-408941519
 
 "}}}
 
